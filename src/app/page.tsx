@@ -112,18 +112,22 @@ export default function Home() {
         >
           <div className="mx-auto max-w-6xl">
             <div className="divide-y divide-border-default">
-              {projects.map((p) => (
+              {projects.map((p, i) => (
                 <div
                   key={p.name}
-                  className="flex flex-col gap-1 py-5 sm:flex-row sm:items-baseline sm:gap-6 sm:py-6"
+                  className="grid grid-cols-1 gap-1 py-4 transition-colors hover:bg-bg-surface-muted/40 sm:grid-cols-[1fr_2fr_auto] sm:items-baseline sm:gap-6 sm:py-5 sm:px-3 -mx-3 rounded-sm"
                 >
-                  <div className="flex items-baseline gap-2 sm:gap-3">
+                  {/* Name */}
+                  <div className="flex items-baseline gap-3">
+                    <span className="hidden select-none text-xs font-black tracking-wider text-text-muted/30 sm:inline">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
                     {p.url && !p.underDev ? (
                       <a
                         href={p.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-base font-bold text-text-primary hover:text-accent transition-colors sm:text-lg"
+                        className="text-base font-bold text-text-primary transition-colors hover:text-accent sm:text-lg"
                       >
                         {p.name}
                       </a>
@@ -132,18 +136,37 @@ export default function Home() {
                         {p.name}
                       </span>
                     )}
-                    <a
-                      href={`https://github.com/sparshsam/${p.repo}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="rounded-full bg-bg-surface-muted px-3 py-1 text-[11px] font-semibold text-text-muted transition-colors hover:text-text-primary hover:bg-[#252525] whitespace-nowrap"
-                    >
-                      GitHub
-                    </a>
                   </div>
+
+                  {/* Description */}
                   <span className="text-sm leading-snug text-text-secondary sm:text-base">
                     {p.desc}
                   </span>
+
+                  {/* GitHub link */}
+                  <a
+                    href={`https://github.com/sparshsam/${p.repo}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-1 text-xs font-semibold text-text-muted transition-colors hover:text-accent sm:justify-end"
+                  >
+                    GitHub
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="12"
+                      height="12"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="size-3"
+                    >
+                      <path d="M7 7h10v10" />
+                      <path d="M7 17 17 7" />
+                    </svg>
+                  </a>
                 </div>
               ))}
             </div>
