@@ -1,0 +1,44 @@
+/* Abstract decorative elements for the projects exhibition */
+
+/* A circle ornament — accent color, varying sizes */
+.ornament-circle {
+  aspect-ratio: 1;
+  border-radius: 9999px;
+  background: var(--color-accent);
+}
+
+/* A diamond (rotated square) */
+.ornament-diamond {
+  aspect-ratio: 1;
+  border-radius: 2px;
+  background: var(--color-accent);
+  transform: rotate(45deg);
+}
+
+/* A thin horizontal rule in accent */
+.ornament-rule {
+  height: 2px;
+  background: var(--color-accent);
+  border-radius: 1px;
+}
+
+/* A vertical accent line */
+.ornament-vert {
+  width: 2px;
+  border-radius: 1px;
+  background: var(--color-accent);
+}
+
+/* A 3x3 dot grid pattern */
+.ornament-dots {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
+}
+
+.ornament-dots span {
+  width: 4px;
+  height: 4px;
+  border-radius: 9999px;
+  background: var(--color-accent);
+}
