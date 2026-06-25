@@ -207,7 +207,7 @@ export default function Home() {
       <main>
         {/* ── Hero — directly on canvas ── */}
         <section className="px-6 pt-28 sm:px-10 sm:pt-40">
-          <div className="mx-auto max-w-6xl">
+          <div className="mx-auto max-w-6xl text-center">
             <h1 className="select-none text-[clamp(4rem,15vw,10rem)] font-black leading-[0.85] tracking-[-0.03em] text-text-primary">
               KOVINA
             </h1>
@@ -217,12 +217,12 @@ export default function Home() {
                 <br />
                 Forged to last.
               </p>
-              <p className="mt-4 max-w-xl text-base leading-relaxed text-text-secondary sm:text-lg">
+              <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-text-secondary sm:text-lg">
                 A collection of open-source tools built for ownership, permanence,
                 and everyday use.
               </p>
             </div>
-            <div className="mt-8 flex flex-wrap gap-3 sm:mt-10">
+            <div className="mt-8 flex flex-wrap justify-center gap-3 sm:mt-10">
               <a
                 href="#projects"
                 className="inline-flex min-h-[44px] items-center rounded-full bg-accent px-7 py-3.5 text-sm font-semibold text-white transition-[filter] hover:brightness-110"
@@ -242,8 +242,8 @@ export default function Home() {
 
         {/* ── Editorial Statement ── */}
         <section className="px-6 py-28 sm:px-10 sm:py-40">
-          <div className="mx-auto max-w-6xl">
-            <p className="max-w-2xl text-xl font-bold leading-relaxed text-text-primary sm:text-2xl sm:leading-relaxed">
+          <div className="mx-auto max-w-6xl text-center">
+            <p className="mx-auto max-w-2xl text-xl font-bold leading-relaxed text-text-primary sm:text-2xl sm:leading-relaxed">
               Most software is rented.{" "}
               <span className="text-accent">Kovina</span> tools are built to be
               owned, understood, and kept.
