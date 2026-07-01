@@ -7,19 +7,26 @@
 | Role | Weight | Tracking | Size (reference) |
 |---|---|---|---|
 | OPEN wordmark | Bold (700) | 0.05em | 96px (master) / 14px (header) |
-| Product name | Regular (400) | 0em | 72px (lockup) / 14px (header) |
+| Product name (lockup) | Medium (500) | 0em | 72px (lockup) |
+| Header variant | Bold (700) | 0.05em | 14px |
 
-## Why Inter Bold (700)?
-
-KOVINA owns Black (900). It is the boldest expression in the ecosystem.
-
-Open uses Bold (700) — clearly part of the same family but visually subordinate. This creates a natural hierarchy:
+## Weight Hierarchy
 
 ```
-KOVINA (900)  →  OPEN (700)  →  Reader (400)
+KOVINA (900)  →  OPEN (700)  →  Reader (500)
 ```
 
-The progression from heaviest to lightest reinforces the ecosystem structure: parent → family → product.
+| Element | Weight | Role |
+|---|---|---|
+| KOVINA | Black (900) | Boldest — ecosystem anchor |
+| OPEN | Bold (700) | Family identifier |
+| Reader | Medium (500) | The star — readable and present |
+
+**Why Medium (500) for product names?**
+
+Regular (400) is too light. In a lockup like "OPEN Reader", the word "Reader" — the actual product name — becomes visually weak despite being the most important piece of information for the user.
+
+Medium (500) solves this: it keeps the product name clearly subordinate to OPEN while ensuring it remains legible, present, and visually weighted as the star of the lockup.
 
 ## Tracking
 

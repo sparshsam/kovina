@@ -30,14 +30,14 @@ This three-level system allows Kovina to remain stable while the Open family gro
 | Role | Typeface | Weight | Tracking |
 |---|---|---|---|
 | OPEN wordmark | Inter | Bold (700) | 0.05em |
-| Product name (lockup) | Inter | Regular (400) | 0em |
+| Product name (lockup) | Inter | Medium (500) | 0em |
 | Headings (docs) | Inter | Bold (700) | — |
 | Body (docs) | Inter | Regular (400) | — |
 
 **Rationale:**
 - **Bold (700)** for OPEN differentiates it from KOVINA's **Black (900)** while remaining clearly part of the same typeface family.
 - **0.05em tracking** gives the OPEN wordmark a deliberate, considered rhythm that subtly separates it from the product names.
-- **Regular (400)** for product names keeps them subordinate to OPEN and ensures the family identity reads first.
+- **Medium (500)** for product names keeps them readable and present — the product name is the star of the lockup, not an afterthought. Medium strikes the balance between subordinate (Regular) and competitive (Bold).
 
 ## Spacing
 
@@ -49,11 +49,22 @@ This three-level system allows Kovina to remain stable while the Open family gro
 
 ## Alignment
 
-- Lockups are always horizontal: **OPEN** _Product_
-- OPEN is always uppercase.
-- Product name is always title case (Reader, not reader or READER).
-- Never stack OPEN vertically above the product name.
-- Never rotate OPEN or the lockup.
+### Horizontal Lockup (primary — 95% of use)
+
+**OPEN** _Product_
+
+OPEN is always uppercase. Product name is always title case.
+
+### Stacked Lockup (splash screens, heroes, about pages)
+
+```
+OPEN
+Product
+```
+
+OPEN centered above the product name. Both centered. Used when horizontal space is limited.
+
+Never rotate OPEN or the lockup.
 
 ## Minimum Sizes
 
@@ -99,6 +110,17 @@ Never:
 ❌ Use OPEN without a product name (wordmark-only use is acceptable for headers).
 ❌ Place OPEN on a colored background without adequate contrast.
 
+## Application Icons — Relationship
+
+**Every application owns its own icon. OPEN never has an icon.**
+
+OPEN is typography only. It is a wordmark, not a symbol, not a badge, not a logo mark.
+
+- Application icons represent the individual product (Reader, Proof, Ledger, etc.).
+- The OPEN wordmark represents the product family.
+- They serve different purposes and must not be combined into a single mark.
+- Never create an "Open icon" or an "Open symbol."
+
 ## Application Branding
 
 Every Open application:
@@ -128,4 +150,18 @@ Each Open repository should include:
 
 ---
 
-*This document is part of the Open Brand Assets v1.0.0-draft. Not yet frozen.*
+## Prefix Restriction
+
+Only **Kovina** and **Open** may appear before a product name in any branding context.
+
+✅ KOVINA (parent)
+✅ OPEN Reader (lockup)  
+✅ OpenReader (product name)
+
+❌ Kovina Open Reader (double prefix — never)
+
+This prevents prefix stacking and ensures brand hierarchy remains clean as the ecosystem grows.
+
+---
+
+*This document is part of the Open Brand Assets v0.9.0. Review candidate — not yet frozen.*

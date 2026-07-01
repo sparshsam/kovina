@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200" width="400" height="200">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;700&amp;display=swap');
+      .open { font-family: 'Inter', 'Arial', sans-serif; font-weight: 700; font-size: 36px; letter-spacing: 0.05em; }
+      .product { font-family: 'Inter', 'Arial', sans-serif; font-weight: 500; font-size: 36px; }
+      .version { font-family: 'Inter', 'Arial', sans-serif; font-weight: 400; font-size: 12px; fill: #555555; }
+    </style>
+  </defs>
+  <text x="200" y="90" class="open" fill="#111111" text-anchor="middle">OPEN</text>
+  <text x="200" y="125" class="product" fill="#111111" text-anchor="middle">ProductName</text>
+  <text x="200" y="155" class="version" text-anchor="middle">v0.0.0</text>
+  <text x="200" y="185" font-family="'Inter', Arial, sans-serif" font-size="9" fill="#555555" text-anchor="middle">Part of the Kovina ecosystem</text>
+</svg>

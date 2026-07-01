@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 640" width="1280" height="640">
+  <rect width="1280" height="640" fill="#111111"/>
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;700&amp;display=swap');
+      .open { font-family: 'Inter', 'Arial', sans-serif; font-weight: 700; font-size: 96px; letter-spacing: 0.05em; }
+      .product { font-family: 'Inter', 'Arial', sans-serif; font-weight: 500; font-size: 96px; }
+      .tagline { font-family: 'Inter', 'Arial', sans-serif; font-weight: 400; font-size: 24px; fill: #555555; }
+    </style>
+  </deps>
+  <!-- Replace ProductName and tagline -->
+  <text x="640" y="300" class="open" fill="#FFFFFF" text-anchor="middle">OPEN</text>
+  <text x="640" y="360" class="product" fill="#FFFFFF" text-anchor="middle">ProductName</text>
+  <text x="640" y="410" class="tagline" text-anchor="middle">One-line description of the application</text>
+  <text x="640" y="590" font-family="'Inter', Arial, sans-serif" font-size="16" fill="#555555" text-anchor="middle">Part of the Kovina ecosystem</text>
+</svg>

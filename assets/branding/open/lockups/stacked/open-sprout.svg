@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 160" width="400" height="160">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;700&amp;display=swap');
+      .open { font-family: 'Inter', 'Arial', sans-serif; font-weight: 700; font-size: 48px; letter-spacing: 0.05em; }
+      .product { font-family: 'Inter', 'Arial', sans-serif; font-weight: 500; font-size: 48px; }
+    </style>
+  </defs>
+  <text x="200" y="70" class="open" fill="#111111" text-anchor="middle">OPEN</text>
+  <text x="200" y="115" class="product" fill="#111111" text-anchor="middle">Sprout</text>
+</svg>

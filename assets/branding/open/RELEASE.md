@@ -1,7 +1,7 @@
 # Open Brand Assets
 
-**Version:** 1.0.0-draft
-**Status:** Draft — not yet frozen
+**Version:** 0.9.0
+**Status:** Review candidate — not yet frozen
 **Release Date:** 2026-07-01
 
 ## Master Asset
@@ -10,15 +10,16 @@
 
 ## NOTE
 
-This release is intentionally **NOT frozen**.
+This is a **review candidate**, not a final release.
 
-It is the first design candidate for the Open Product Family and will be manually reviewed before becoming the official Open Brand Assets v1.0.0.
+Kovina Brand Assets earned v1.0.0 because the website, repository, documentation, and standards all shipped simultaneously. Open Brand Assets has not yet been applied to any real application. This release will be informed by actual use before freezing.
 
 ## Design Decisions
 
 | Decision | Value | Rationale |
 |---|---|---|
-| Weight | Bold (700) | Softer than KOVINA (Black 900), distinct from product names (Regular 400) |
-| Tracking | 0.05em | Subtle separation from product names, deliberate rhythm |
-| Product weight | Regular (400) | Clearly subordinate to OPEN, keeps focus on the family brand |
+| OPEN weight | Bold (700) | Softer than KOVINA (Black 900), distinct from product names |
+| OPEN tracking | 0.05em | Subtle separation from product names, deliberate rhythm |
+| Product weight | Medium (500) | Readable and present — the product name is the star |
+| Product tracking | 0em | Neutral, readable |
 | Color | #111111 / #FFFFFF | Inherited from Kovina brand palette |

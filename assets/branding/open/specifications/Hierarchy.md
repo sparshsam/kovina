@@ -16,7 +16,7 @@ Level 2    OPEN            Product family
            Reusable — shared by all Open apps
 
 Level 3    Reader          Individual product
-           Inter Regular 400
+           Inter Medium 500
            0em tracking
            Title case
            Unique per application
@@ -35,7 +35,7 @@ Level 3    Reader          Individual product
 In any composition, the weights should read clearly:
 
 | Element | Weight | Purpose |
-|---|---|---|
+|---|---|---|---|
 | KOVINA | Black (900) | Dominant — ecosystem anchor |
 | OPEN | Bold (700) | Supporting — family identifier |
-| Product name | Regular (400) | Subordinate — individual identity |
+| Product name | Medium (500) | Readable — the star of the lockup |
