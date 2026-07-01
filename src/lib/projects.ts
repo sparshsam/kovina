@@ -28,7 +28,7 @@ export function statusLabel(s: ProjectStatus): string {
 
 export const projects: Project[] = [
   // ── Live ──
-  { slug: "openreader",        name: "OpenReader",        desc: "Native PDF reader for Windows.",                  website: "https://reader.kovina.org",               repo: "openreader",          underDev: false, isDesktop: true  },
+  { slug: "openreader",        name: "OpenReader",        desc: "Native PDF reader for Windows.",                  storeUrl: "https://apps.microsoft.com/detail/9MXDVW2645LL", website: "https://reader.kovina.org", repo: "openreader", underDev: false, isDesktop: true  },
   { slug: "opensnap",          name: "OpenSnap",          desc: "Screenshot and OCR widget for Windows.",           storeUrl: "https://apps.microsoft.com/detail/9NV4G1F09L41", website: "https://snap.kovina.org", repo: "opensnap", underDev: false, isDesktop: true  },
   { slug: "opensend",          name: "OpenSend",          desc: "Free, open-source file sharing.",                 website: "https://send.kovina.org",                 repo: "opensend",            underDev: false, isDesktop: false },
   { slug: "hisstastic",        name: "Hisstastic",        desc: "Casual snake game.",                              website: "https://hisstastic.vercel.app",            repo: "hisstastic",          underDev: false, isDesktop: false },
