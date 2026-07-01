@@ -8,9 +8,6 @@ const titleLayouts = [
   { titlePos: "items-start text-left",         descAlign: "" },
   { titlePos: "items-center text-center",      descAlign: "mx-auto" },
   { titlePos: "items-end text-right",          descAlign: "ml-auto" },
-  { titlePos: "items-start text-left",         descAlign: "" },
-  { titlePos: "items-center text-center",      descAlign: "mx-auto" },
-  { titlePos: "items-end text-right",          descAlign: "ml-auto" },
 ];
 
 /* ── Helpers ── */
