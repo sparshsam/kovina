@@ -93,30 +93,68 @@ export default function AppPage({ params }: { params: Promise<{ slug: string }> 
             <p className="mt-4 max-w-xl text-sm leading-relaxed text-text-secondary sm:text-base">
               {content?.longDesc ?? project.desc}
             </p>
-            <div className="mt-8 flex flex-wrap justify-center gap-3">
-              <a
-                href="/#projects"
-                className="inline-flex min-h-[44px] items-center rounded-full bg-bg-surface-muted px-7 py-3.5 text-sm font-semibold text-text-primary transition-colors hover:bg-accent hover:text-white"
-              >
-                Back to Projects
-              </a>
-              {project.url && live && (
+            <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
+              {/* ── Store link (primary CTA for live desktop apps) ── */}
+              {project.storeUrl && live && (
                 <a
-                  href={project.url}
+                  href={project.storeUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex min-h-[44px] items-center rounded-full bg-accent px-7 py-3.5 text-sm font-semibold text-white transition-[filter] hover:brightness-110"
+                  className="inline-flex min-h-[44px] items-center gap-2 rounded-full bg-accent px-7 py-3.5 text-sm font-semibold text-white transition-[filter] hover:brightness-110"
                 >
-                  Visit Site
+                  <svg viewBox="0 0 24 24" fill="currentColor" className="size-5">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l7 4.5-7 4.5z"/>
+                  </svg>
+                  Microsoft Store
                 </a>
               )}
+
+              {/* ── Website link (secondary CTA) ── */}
+              {project.website && (
+                <a
+                  href={project.website}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`inline-flex min-h-[44px] items-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold transition-colors ${
+                    project.storeUrl && live
+                      ? "bg-bg-surface-muted text-text-primary hover:bg-accent hover:text-white"
+                      : "bg-accent text-white hover:brightness-110"
+                  }`}
+                >
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="size-4">
+                    <circle cx="12" cy="12" r="10"/>
+                    <line x1="2" y1="12" x2="22" y2="12"/>
+                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                  </svg>
+                  {project.website.replace(/https?:\/\//, "")}
+                </a>
+              )}
+
+              {/* ── GitHub link ── */}
               <a
                 href={`https://github.com/sparshsam/${project.repo}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex min-h-[44px] items-center rounded-full bg-bg-surface-muted px-7 py-3.5 text-sm font-semibold text-text-primary transition-colors hover:bg-accent hover:text-white"
+                className="inline-flex min-h-[44px] items-center gap-2 rounded-full bg-bg-surface-muted px-7 py-3.5 text-sm font-semibold text-text-primary transition-colors hover:bg-accent hover:text-white"
               >
-                View Source
+                <svg viewBox="0 0 24 24" fill="currentColor" className="size-5">
+                  <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+                </svg>
+                Source
+              </a>
+            </div>
+
+            {/* ── Back to Projects (least hierarchy) ── */}
+            <div className="mt-6">
+              <a
+                href="/#projects"
+                className="inline-flex items-center gap-1 text-xs font-semibold text-text-muted transition-colors hover:text-accent"
+              >
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="size-3">
+                  <path d="M19 12H5"/>
+                  <path d="m12 19-7-7 7-7"/>
+                </svg>
+                Back to Projects
               </a>
             </div>
           </div>
