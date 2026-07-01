@@ -19,13 +19,14 @@ export function statusLabel(s: ProjectStatus): string {
   switch (s) {
     case "live": return "Live";
     case "dev": return "Dev";
-    case "desktop": return "Desktop";
+    case "desktop": return "Live";
   }
 }
 
 export const projects: Project[] = [
   // ── Live ──
   { slug: "openreader",        name: "OpenReader",        desc: "Native PDF reader for Windows.",                  /* Microsoft Store / desktop distribution */        repo: "openreader",          underDev: false, isDesktop: true  },
+  { slug: "opensnap",          name: "OpenSnap",          desc: "Screenshot and OCR widget for Windows.",           url: "https://snap.kovina.org",                   repo: "opensnap",            underDev: false, isDesktop: true  },
   { slug: "opensend",          name: "OpenSend",          desc: "Free, open-source file sharing.",                 url: "https://github.com/sparshsam/opensend",     repo: "opensend",            underDev: false, isDesktop: false },
   { slug: "hisstastic",        name: "Hisstastic",        desc: "Casual snake game.",                              url: "https://hisstastic.vercel.app",             repo: "hisstastic",          underDev: false, isDesktop: false },
   { slug: "wordwise",          name: "WordWise",          desc: "Language and vocabulary tool.",                   url: "https://wordwisehiccups.vercel.app",        repo: "wordwise",            underDev: false, isDesktop: false },

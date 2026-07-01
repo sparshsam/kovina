@@ -18,7 +18,7 @@ function hasIcon(slug: string) {
 
 function StatusBadge({ p }: { p: Project }) {
   const st = projectStatus(p);
-  const live = st === "live";
+  const live = st === "live" || st === "desktop";
   return (
     <span
       className={`inline-flex items-center rounded-full px-3 py-1 text-[11px] font-bold tracking-wider uppercase ${
