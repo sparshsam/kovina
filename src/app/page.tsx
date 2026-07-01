@@ -170,23 +170,19 @@ export default function Home() {
     <>
       {/* ── Sticky Header ── */}
       <header className="sticky top-0 z-50 bg-bg-base/90 backdrop-blur-md">
-        <div className="relative flex items-center justify-center px-6 py-3 sm:px-10">
-          <div className="flex w-full max-w-6xl items-center justify-between">
-            <a href="#" className="text-sm font-bold tracking-widest uppercase text-text-primary">
-              Kovina
+        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-3 sm:px-10">
+          <a href="#" className="text-sm font-bold tracking-widest uppercase text-text-primary">
+            Kovina
+          </a>
+          <div className="flex items-center gap-3 sm:gap-4">
+            <a
+              href="https://github.com/sparshsam"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-full px-3 py-2 text-xs font-semibold text-text-secondary transition-colors hover:bg-accent hover:text-white sm:px-4"
+            >
+              GitHub
             </a>
-            <nav className="flex items-center gap-1 sm:gap-2">
-              <a
-                href="https://github.com/sparshsam"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="rounded-full px-3 py-2 text-xs font-semibold text-text-secondary transition-colors hover:bg-accent hover:text-white sm:px-4"
-              >
-                GitHub
-              </a>
-            </nav>
-          </div>
-          <div className="absolute right-4 top-1/2 -translate-y-1/2 sm:right-6">
             <ThemeToggle />
           </div>
         </div>
