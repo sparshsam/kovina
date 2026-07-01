@@ -1,5 +1,11 @@
 # Kovina Brand Guidelines
 
+## Brand Philosophy
+
+Kovina represents software that is calm, durable, transparent, and built to last. The identity intentionally avoids visual trends, decorative effects, and excessive branding. The software—not the logo—is the focus. Simplicity, restraint, and longevity guide every visual decision.
+
+---
+
 ## Mission
 
 To forge personal software that is owned, understood, and kept—tools that respect attention, preserve privacy, and remain useful across a lifetime.
@@ -23,6 +29,35 @@ To forge personal software that is owned, understood, and kept—tools that resp
 
 ---
 
+## Brand Promise
+
+Every Kovina application is built with the same principles:
+
+- **Open source** — AGPLv3 or MIT licensed.
+- **Privacy-first** — no telemetry, no accounts required.
+- **Local-first where practical** — your data stays on your machine.
+- **Exportable data** — no lock-in, no proprietary formats.
+- **No dark patterns** — no engagement loops, no deceptive UI.
+- **Clear interfaces** — calm, editorial, typography-driven.
+- **Long-term maintainability** — built to be forked, self-hosted, and kept.
+- **Respect for user ownership** — software you can keep.
+
+---
+
+## Logo Hierarchy
+
+| Level | Brand | Purpose |
+|---|---|---|
+| Level 1 | Kovina | Parent ecosystem |
+| Level 2 | Open | Product family prefix |
+| Level 3 | Reader / Proof / Ledger | Individual applications |
+
+### Reserved: The Open Family Identity
+
+The Open family identity will become a standardized visual system shared across every Kovina application beginning with "Open". Product-specific branding will build upon this common identity while remaining visually distinct. This specification is reserved for future design work.
+
+---
+
 ## Logo
 
 Kovina uses a **wordmark-only** identity. There is no symbol, mascot, or abstract mark. The wordmark is the logo.
@@ -40,7 +75,7 @@ KOVINA
 | **Weight** | Black (900) |
 | **Letter spacing** | -0.03em |
 | **Case** | Uppercase |
-| **Color** | #111111 (light) / #FFFFFF (dark) |
+| **Color** | `#111111` (light) / `#FFFFFF` (dark) |
 
 Scale proportionally to the intended use.
 
@@ -71,6 +106,38 @@ Located in `assets/branding/logos/`:
 | `kovina-wordmark-header.svg` | Secondary — header/nav variant |
 | `kovina-favicon.svg` | Square app icon / favicon |
 | `kovina-social.svg` | Social sharing card (1200×630) |
+
+---
+
+## Grid System
+
+All Kovina layouts should align to a consistent spacing grid:
+
+| Token | Value |
+|---|---|
+| Base unit | 4px |
+| xs | 4px |
+| sm | 8px |
+| md | 16px |
+| lg | 24px |
+| xl | 32px |
+| 2xl | 48px |
+| 3xl | 64px |
+
+This applies to logos, splash screens, documentation layouts, and website spacing. All margins, paddings, and gaps should fall on these increments.
+
+---
+
+## Icon Philosophy
+
+Application icons should be:
+
+- **Simple** — minimal detail, geometric shapes.
+- **Recognizable at small sizes** — legible from 16×16 through 512×512 pixels.
+- **Restrained color palettes** — appropriate to each application's identity.
+- **Free of unnecessary detail** — no gradients, shadows, or textures.
+
+Icon style should favor filled shapes, consistent stroke weights, and clear silhouettes.
 
 ---
 
@@ -157,11 +224,64 @@ No other typefaces should be used in Kovina-branded materials.
 
 ---
 
+## Naming Convention
+
+All Kovina applications follow this naming pattern:
+
+```
+OpenReader
+OpenProof
+OpenLedger
+OpenPalette
+OpenJournal
+OpenTone
+OpenSprout
+OpenConvert
+OpenScrabble
+OpenSend
+OpenSnap
+```
+
+### Rules
+
+- **PascalCase** — always.
+- **Prefix** — always "Open" for product applications.
+- **No hyphens** in display names (hyphens allowed in repository slugs).
+- **No abbreviations** — spell out fully.
+- **No version numbers** in names.
+- **Non-Open exceptions** — individual projects may omit the prefix (Hisstastic, WordWise, Chess by Sparsh, Elora Vault, SheSafe, World Clock Widget).
+
+---
+
 ## Application Branding
 
 Each Open* application may define its own accent color and visual identity within the Kovina ecosystem framework. Application logos should reference the Kovina wordmark in their documentation but are not required to include it in their own app icons.
 
 Application branding guidelines should be maintained in their respective repositories under `assets/branding/`.
+
+---
+
+## Repository Standards
+
+Every Kovina ecosystem repository should include:
+
+```
+README.md              # Premium showroom landing page
+LICENSE                # AGPLv3 or MIT
+CHANGELOG.md           # Release history
+CONTRIBUTING.md        # Contribution guide
+SECURITY.md            # Security policy
+CODE_OF_CONDUCT.md     # Code of conduct
+SUPPORT.md             # Support information
+assets/
+  branding/            # Brand assets (logos, colors)
+  screenshots/         # App screenshots
+  hero/                # Hero images
+docs/                  # Developer documentation
+.github/               # GitHub templates and workflows
+```
+
+This consistency ensures every repository feels like part of the same ecosystem.
 
 ---
 
@@ -178,3 +298,17 @@ Examples:
 - `kovina-social.svg`
 
 No "final", "old", or version suffixes.
+
+---
+
+## Reference Documents
+
+The following documents define the shared design, architecture, and MCP standards across all Kovina projects. They live in the kovina repository as the single source of truth:
+
+| Document | Location | Purpose |
+|---|---|---|
+| Design Playbook | `references/DESIGN_PLAYBOOK.md` | UI/UX design system, visual principles, component rules |
+| Product Architecture Playbook | `references/PRODUCT_ARCHITECTURE_PLAYBOOK.md` | Architecture patterns, data flow, state management |
+| MCP Server Build Guide | `references/MCP-SERVER-BUILD-GUIDE.md` | MCP server specification, tools, auth, deployment |
+
+Every Kovina repository should reference these from its own `CLAUDE.md`.

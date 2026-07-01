@@ -38,3 +38,10 @@
 - `CHANGELOG.md` — Release history
 
 **CI:** Repo at github.com/sparshsam/kovina. Main branch auto-deploys to Cloudflare Pages.
+
+**Brand assets:** `assets/branding/BRAND_GUIDELINES.md` — full identity system (wordmark SVGs, colors, logo hierarchy, icon philosophy, naming convention, repository standards)
+
+**Reference documents (shared across all Open* projects):**
+- `references/DESIGN_PLAYBOOK.md` — UI/UX design system
+- `references/PRODUCT_ARCHITECTURE_PLAYBOOK.md` — architecture patterns
+- `references/MCP-SERVER-BUILD-GUIDE.md` — MCP server specification
