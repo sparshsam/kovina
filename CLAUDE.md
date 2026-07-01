@@ -42,6 +42,9 @@
 **Brand assets:** `assets/branding/` — wordmark SVGs (black, white, header, favicon, social)
 
 **Ecosystem standards (shared across all Open* projects — read before every session):**
+- `standards/VERSION.md` — Version manifest (current: v1.0.0)
+- `standards/CHANGELOG.md` — Standards changelog
+- `standards/manifest.json` — Machine-readable version manifest
 - `standards/KOVINA_MANIFESTO.md` — Constitution: why Kovina exists, what belongs, principles
 - `standards/BRAND_GUIDELINES.md` — Brand identity system
 - `standards/DESIGN_PLAYBOOK.md` — UI/UX design system

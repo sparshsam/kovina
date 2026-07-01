@@ -1,0 +1,15 @@
+{
+  "manifest": "1.0.0",
+  "version": "1.0.0",
+  "released": "2026-07-01",
+  "standards": {
+    "manifesto": "1.0.0",
+    "brand": "1.0.0",
+    "design": "1.0.0",
+    "architecture": "1.0.0",
+    "mcp": "1.0.0",
+    "release": "1.0.0",
+    "testing": "1.0.0",
+    "documentation": "1.0.0"
+  }
+}

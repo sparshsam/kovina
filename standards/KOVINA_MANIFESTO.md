@@ -2,6 +2,8 @@
 
 > Version 1.0 — July 2026
 >
+> Standards version: [v1.0.0](VERSION.md)
+>
 > This document is a constitution. Every Kovina project and every contributor—human or AI—reads and follows it before writing a line of code.
 
 ---
