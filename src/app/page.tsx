@@ -1,163 +1,69 @@
 import ThemeToggle from "@/components/ThemeToggle";
+import { projects, projectStatus, statusLabel } from "@/lib/projects";
+import type { Project } from "@/lib/projects";
 
-/* ── Abstract decorative imagery ── */
+/* ── 6 title layout variations, cycling ── */
 
-function OrnamentCircle({ size = 40, opacity = 0.15 }: { size?: number; opacity?: number }) {
-  return (
-    <div
-      className="rounded-full"
-      style={{
-        width: size,
-        height: size,
-        background: "var(--color-accent)",
-        opacity,
-      }}
-    />
-  );
-}
-
-function OrnamentDiamond({ size = 32, opacity = 0.12 }: { size?: number; opacity?: number }) {
-  return (
-    <div
-      className="rounded-sm"
-      style={{
-        width: size,
-        height: size,
-        background: "var(--color-accent)",
-        opacity,
-        transform: "rotate(45deg)",
-      }}
-    />
-  );
-}
-
-function OrnamentRule({ width = 80, opacity = 0.2 }: { width?: number; opacity?: number }) {
-  return (
-    <div
-      className="rounded-full"
-      style={{
-        width,
-        height: 2,
-        background: "var(--color-accent)",
-        opacity,
-      }}
-    />
-  );
-}
-
-function OrnamentDots({ opacity = 0.15 }: { opacity?: number }) {
-  return (
-    <div className="grid grid-cols-3 gap-[5px]">
-      {Array.from({ length: 9 }).map((_, i) => (
-        <div
-          key={i}
-          className="rounded-full"
-          style={{
-            width: 5,
-            height: 5,
-            background: "var(--color-accent)",
-            opacity,
-          }}
-        />
-      ))}
-    </div>
-  );
-}
-
-function OrnamentCross({ size = 28, opacity = 0.1 }: { size?: number; opacity?: number }) {
-  const style = {
-    background: "var(--color-accent)",
-    opacity,
-  };
-  return (
-    <div className="relative" style={{ width: size, height: size }}>
-      <div className="absolute left-1/2 top-0 h-full -translate-x-1/2 rounded-full" style={{ ...style, width: 2 }} />
-      <div className="absolute left-0 top-1/2 w-full -translate-y-1/2 rounded-full" style={{ ...style, height: 2 }} />
-    </div>
-  );
-}
-
-/* ── Project data ── */
-
-type Project = {
-  name: string;
-  desc: string;
-  url?: string;
-  repo: string;
-  underDev: boolean;
-};
-
-const projects: Project[] = [
-  { name: "Chess by Sparsh",   desc: "Interactive chess with computer opponent.",        url: "https://chess-by-sparsh.vercel.app",         repo: "chess-by-sparsh",     underDev: true  },
-  { name: "Elora Vault",       desc: "Onchain capital infrastructure.",                  url: "https://elora-bet-api.vercel.app",          repo: "elora-vault",         underDev: true  },
-  { name: "Hisstastic",        desc: "Casual snake game.",                              url: "https://hisstastic.vercel.app",             repo: "hisstastic",          underDev: false },
-  { name: "OpenConvert",       desc: "Privacy-first file conversion tools.",            /* not publicly deployed yet */                     repo: "openconvert",         underDev: true  },
-  { name: "OpenJournal",       desc: "Personal journaling and reflection.",             /* not publicly deployed yet */                     repo: "openjournal",         underDev: true  },
-  { name: "OpenLedger",        desc: "Personal finance and net worth tracking.",         url: "https://openledgerbysparsh.vercel.app",     repo: "openledger",          underDev: true  },
-  { name: "OpenPalette",       desc: "Color and palette utility.",                      url: "https://openpalette-delta.vercel.app",      repo: "openpalette",         underDev: true  },
-  { name: "OpenProof",         desc: "Proof of existence and verification.",             url: "https://openproof.vercel.app",              repo: "openproof",           underDev: true  },
-  { name: "OpenReader",        desc: "Native PDF reader for Windows.",                  /* Microsoft Store / desktop distribution */        repo: "openreader",          underDev: false },
-  { name: "OpenScrabble",      desc: "Two-player word game.",                           url: "https://openscrabble.vercel.app",           repo: "openscrabble",        underDev: true  },
-  { name: "OpenSend",          desc: "Free, open-source file sharing.",                 url: "https://github.com/sparshsam/opensend",     repo: "opensend",            underDev: false },
-  { name: "OpenSprout",        desc: "Plant care and gardening companion.",             url: "https://opensprout.vercel.app",             repo: "opensprout",          underDev: true  },
-  { name: "OpenTone",          desc: "Desktop music player.",                           /* desktop application, no public web app */        repo: "opentone",            underDev: true  },
-  { name: "SheSafe",           desc: "Community safety mapping.",                       url: "https://isshesafe.vercel.app",              repo: "shesafe",             underDev: true  },
-  { name: "Sparsh Sam",        desc: "Personal site and portfolio.",                    url: "https://sparshsam.github.io",               repo: "sparshsam.github.io", underDev: false },
-  { name: "WordWise",          desc: "Language and vocabulary tool.",                   url: "https://wordwisehiccups.vercel.app",        repo: "wordwise",            underDev: false },
-  { name: "World Clock Widget",desc: "Desktop world clock utility.",                    /* desktop application, no public web app */        repo: "world-clock-widget",  underDev: true  },
+const titleLayouts = [
+  { titlePos: "items-start text-left",         descAlign: "" },
+  { titlePos: "items-center text-center",      descAlign: "mx-auto" },
+  { titlePos: "items-end text-right",          descAlign: "ml-auto" },
+  { titlePos: "items-start text-left",         descAlign: "" },
+  { titlePos: "items-center text-center",      descAlign: "mx-auto" },
+  { titlePos: "items-end text-right",          descAlign: "ml-auto" },
 ];
 
-/* ── Layout patterns by index ── */
-/* Each pattern defines scale, ornament, alignment, vertical rhythm. No two adjacent projects share the same pattern. */
+/* ── Helpers ── */
 
-type LayoutPattern = "canvas" | "marginalia" | "spread" | "notice" | "asymmetric";
+function hasIcon(slug: string) {
+  return !["elora-vault", "shesafe", "sparsh-sam", "world-clock-widget"].includes(slug);
+}
 
-/* Distribute patterns so no two adjacent are the same */
-const patternFor: LayoutPattern[] = [
-  "canvas",      // 0  Chess by Sparsh
-  "marginalia",  // 1  Elora Vault
-  "spread",      // 2  Hisstastic
-  "notice",      // 3  OpenConvert
-  "asymmetric",  // 4  OpenJournal
-  "canvas",      // 5  OpenLedger
-  "marginalia",  // 6  OpenPalette
-  "spread",      // 7  OpenProof
-  "notice",      // 8  OpenReader
-  "asymmetric",  // 9  OpenScrabble
-  "canvas",      // 10 OpenSend
-  "marginalia",  // 11 OpenSprout
-  "spread",      // 12 OpenTone
-  "notice",      // 13 SheSafe
-  "asymmetric",  // 14 Sparsh Sam
-  "canvas",      // 15 WordWise
-  "marginalia",  // 16 World Clock Widget
-];
+function StatusBadge({ p }: { p: Project }) {
+  const st = projectStatus(p);
+  const live = st === "live";
+  return (
+    <span
+      className={`inline-flex items-center rounded-full px-3 py-1 text-[11px] font-bold tracking-wider uppercase ${
+        live ? "bg-accent/15 text-accent" : "bg-text-muted/10 text-text-muted"
+      }`}
+    >
+      {statusLabel(st)}
+    </span>
+  );
+}
 
-/* ── Render helpers ── */
-
-function ProjectName({ p }: { p: Project }) {
-  if (p.url && !p.underDev) {
-    return (
-      <a
-        href={p.url}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="text-text-primary transition-colors hover:text-accent"
+function ProjectTitle({ p }: { p: Project }) {
+  return (
+    <a
+      href={`/apps/${p.slug}`}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-flex items-center gap-2 text-text-primary transition-colors"
+    >
+      <span className="transition-colors group-hover/section:text-accent">{p.name}</span>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="20" height="20" viewBox="0 0 24 24"
+        fill="none" stroke="currentColor"
+        strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
+        className="size-5 -translate-y-1 opacity-0 transition-all group-hover/section:translate-y-0 group-hover/section:opacity-80 group-hover/section:text-accent"
       >
-        {p.name}
-      </a>
-    );
-  }
-  return <span className="text-text-primary">{p.name}</span>;
+        <path d="M15 3h6v6" />
+        <path d="M10 14 21 3" />
+        <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7" />
+      </svg>
+    </a>
+  );
 }
 
-function GitHubLink({ p, className = "" }: { p: Project; className?: string }) {
+function GitHubLink({ p }: { p: Project }) {
   return (
     <a
       href={`https://github.com/sparshsam/${p.repo}`}
       target="_blank"
       rel="noopener noreferrer"
-      className={`inline-flex items-center gap-1 text-xs font-semibold text-text-muted transition-colors hover:text-accent ${className}`}
+      className="inline-flex items-center gap-1 text-xs font-semibold text-text-muted transition-colors hover:text-accent"
     >
       GitHub
       <svg
@@ -174,6 +80,92 @@ function GitHubLink({ p, className = "" }: { p: Project; className?: string }) {
   );
 }
 
+function ProjectSection({ p, i }: { p: Project; i: number }) {
+  const layout = titleLayouts[i % titleLayouts.length];
+  const hi = hasIcon(p.slug);
+
+  return (
+    <section
+      className="group/section flex min-h-screen flex-col justify-center border-b border-border-default px-6 py-16 transition-transform duration-300 hover:scale-[1.005] sm:px-10"
+    >
+      <div className="mx-auto flex w-full max-w-6xl flex-col gap-6 sm:gap-8">
+        {/* ── App image or placeholder ── */}
+        {hi ? (
+          <a
+            href={`/apps/${p.slug}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block w-full"
+          >
+            <img
+              src={`/app-icons/${p.slug}.png`}
+              alt={`${p.name} screenshot`}
+              className="w-full rounded-2xl object-cover shadow-2xl"
+              style={{ maxHeight: "60vh" }}
+            />
+          </a>
+        ) : (
+          <a
+            href={`/apps/${p.slug}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex w-full items-center justify-center rounded-2xl bg-bg-surface-muted px-8 py-24 transition-colors hover:bg-bg-surface sm:py-32"
+          >
+            <p className="text-center text-4xl font-black leading-[0.9] tracking-tight text-text-muted sm:text-6xl">
+              {p.name}
+            </p>
+          </a>
+        )}
+
+        {/* ── Text block ── */}
+        <div className={`flex w-full flex-col gap-3 sm:gap-4 ${layout.titlePos}`}>
+          <p
+            className={`text-4xl font-black leading-[0.9] tracking-tight text-text-primary font-symbols sm:text-6xl lg:text-7xl ${
+              layout.titlePos.includes("text-right")
+                ? "text-right"
+                : layout.titlePos.includes("text-center")
+                  ? "text-center"
+                  : "text-left"
+            }`}
+          >
+            <ProjectTitle p={p} />
+          </p>
+
+          <div
+            className={`flex gap-2 ${
+              layout.titlePos.includes("text-right")
+                ? "justify-end"
+                : layout.titlePos.includes("text-center")
+                  ? "justify-center"
+                  : ""
+            }`}
+          >
+            <StatusBadge p={p} />
+          </div>
+
+          <p
+            className={`max-w-lg text-sm leading-relaxed text-text-secondary transition-colors group-hover/section:text-accent sm:text-base ${layout.descAlign}`}
+          >
+            {p.desc}
+          </p>
+
+          <div
+            className={
+              layout.titlePos.includes("text-right")
+                ? "flex justify-end"
+                : layout.titlePos.includes("text-center")
+                  ? "flex justify-center"
+                  : ""
+            }
+          >
+            <GitHubLink p={p} />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 /* ── Main page ── */
 
 export default function Home() {
@@ -181,31 +173,30 @@ export default function Home() {
     <>
       {/* ── Sticky Header ── */}
       <header className="sticky top-0 z-50 bg-bg-base/90 backdrop-blur-md">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-3 sm:px-10">
-          <a href="#" className="text-sm font-bold tracking-widest uppercase text-text-primary">
-            Kovina
-          </a>
-          <nav className="flex items-center gap-1 sm:gap-2">
-            <a
-              href="#projects"
-              className="rounded-full px-3 py-2 text-xs font-semibold text-text-secondary transition-colors hover:bg-bg-surface-muted hover:text-text-primary sm:px-4"
-            >
-              Projects
+        <div className="relative flex items-center justify-center px-6 py-3 sm:px-10">
+          <div className="flex w-full max-w-6xl items-center justify-between">
+            <a href="#" className="text-sm font-bold tracking-widest uppercase text-text-primary">
+              Kovina
             </a>
-            <a
-              href="https://github.com/sparshsam"
-              target="_blank" rel="noopener noreferrer"
-              className="rounded-full px-3 py-2 text-xs font-semibold text-text-secondary transition-colors hover:bg-bg-surface-muted hover:text-text-primary sm:px-4"
-            >
-              GitHub
-            </a>
+            <nav className="flex items-center gap-1 sm:gap-2">
+              <a
+                href="https://github.com/sparshsam"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-full px-3 py-2 text-xs font-semibold text-text-secondary transition-colors hover:bg-accent hover:text-white sm:px-4"
+              >
+                GitHub
+              </a>
+            </nav>
+          </div>
+          <div className="absolute right-4 top-1/2 -translate-y-1/2 sm:right-6">
             <ThemeToggle />
-          </nav>
+          </div>
         </div>
       </header>
 
       <main>
-        {/* ── Hero — directly on canvas ── */}
+        {/* ── Hero ── */}
         <section className="px-6 pt-28 sm:px-10 sm:pt-40">
           <div className="mx-auto max-w-6xl text-center">
             <h1 className="select-none text-[clamp(4rem,15vw,10rem)] font-black leading-[0.85] tracking-[-0.03em] text-text-primary">
@@ -231,8 +222,9 @@ export default function Home() {
               </a>
               <a
                 href="https://github.com/sparshsam"
-                target="_blank" rel="noopener noreferrer"
-                className="inline-flex min-h-[44px] items-center rounded-full bg-bg-surface-muted px-7 py-3.5 text-sm font-semibold text-text-primary transition-colors hover:bg-[#252525]"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex min-h-[44px] items-center rounded-full bg-bg-surface-muted px-7 py-3.5 text-sm font-semibold text-text-primary transition-colors hover:bg-accent hover:text-white"
               >
                 GitHub
               </a>
@@ -245,164 +237,22 @@ export default function Home() {
           <div className="mx-auto max-w-6xl text-center">
             <p className="mx-auto max-w-2xl text-xl font-bold leading-relaxed text-text-primary sm:text-2xl sm:leading-relaxed">
               Most software is rented.{" "}
-              <span className="text-accent">Kovina</span> tools are built to be
-              owned, understood, and kept.
+              <span className="text-accent">Kovina</span> tools are built to be owned,
+              understood, and kept.
             </p>
           </div>
         </section>
 
-        {/* ════════════════════════════════════════════
-             PROJECTS — Editorial Exhibition
-             Each project is a unique composition with its
-             own scale, ornament, alignment, and whitespace.
-             ════════════════════════════════════════════ */}
+        {/* ── Projects — App Icons Exhibition ── */}
         <section id="projects" className="border-t border-border-default">
-          {projects.map((p, i) => {
-            const pattern = patternFor[i];
-
-            // ── Pattern A: Canvas ──
-            if (pattern === "canvas") {
-              return (
-                <div
-                  key={p.name}
-                  className="border-b border-border-default px-6 py-12 last:border-b-0 sm:px-10 sm:py-16"
-                >
-                  <div className="mx-auto max-w-6xl">
-                    <OrnamentCircle size={i === 0 ? 56 : 40} opacity={0.1} />
-                    <div className="mt-6 sm:mt-8">
-                      <p className="text-3xl font-black leading-tight tracking-tight sm:text-4xl sm:leading-tight">
-                        <ProjectName p={p} />
-                      </p>
-                      <p className="mt-4 max-w-xl text-base leading-relaxed text-text-secondary sm:text-lg">
-                        {p.desc}
-                      </p>
-                    </div>
-                    <div className="mt-6 sm:mt-8">
-                      <GitHubLink p={p} />
-                    </div>
-                  </div>
-                </div>
-              );
-            }
-
-            // ── Pattern B: Marginalia ──
-            if (pattern === "marginalia") {
-              return (
-                <div
-                  key={p.name}
-                  className="border-b border-border-default px-6 py-10 last:border-b-0 sm:px-10 sm:py-14"
-                >
-                  <div className="mx-auto flex max-w-6xl gap-5 sm:gap-10">
-                    <div
-                      className="mt-1 hidden w-[2px] shrink-0 self-stretch rounded-full sm:block"
-                      style={{ background: "var(--color-accent)", opacity: 0.15 }}
-                    />
-                    <div className="flex-1">
-                      <div className="flex items-start gap-4">
-                        <div className="flex-1">
-                          <p className="text-2xl font-bold leading-tight tracking-tight sm:text-3xl">
-                            <ProjectName p={p} />
-                          </p>
-                          <p className="mt-2 max-w-lg text-sm leading-relaxed text-text-secondary sm:text-base">
-                            {p.desc}
-                          </p>
-                        </div>
-                        <OrnamentDiamond size={24} opacity={0.15} />
-                      </div>
-                      <div className="mt-4">
-                        <GitHubLink p={p} />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              );
-            }
-
-            // ── Pattern C: Spread ──
-            if (pattern === "spread") {
-              return (
-                <div
-                  key={p.name}
-                  className="border-b border-border-default px-6 py-10 last:border-b-0 sm:px-10 sm:py-14"
-                >
-                  <div className="mx-auto max-w-6xl">
-                    <OrnamentRule width={60} opacity={0.12} />
-                    <div className="mt-5 grid gap-4 sm:mt-6 sm:grid-cols-[1fr_1.5fr] sm:gap-10">
-                      <p className="text-2xl font-black leading-tight tracking-tight sm:text-3xl">
-                        <ProjectName p={p} />
-                      </p>
-                      <div>
-                        <p className="text-sm leading-relaxed text-text-secondary sm:text-base">
-                          {p.desc}
-                        </p>
-                        <div className="mt-3">
-                          <GitHubLink p={p} />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              );
-            }
-
-            // ── Pattern D: Notice ──
-            if (pattern === "notice") {
-              return (
-                <div
-                  key={p.name}
-                  className="border-b border-border-default px-6 py-8 last:border-b-0 sm:px-10 sm:py-10"
-                >
-                  <div className="mx-auto flex max-w-6xl items-center gap-3 sm:gap-5">
-                    <OrnamentDots opacity={0.12} />
-                    <div className="flex-1">
-                      <p className="text-lg font-bold leading-tight sm:text-xl">
-                        <ProjectName p={p} />
-                      </p>
-                    </div>
-                    <p className="hidden max-w-xs text-right text-sm text-text-secondary sm:block">
-                      {p.desc}
-                    </p>
-                    <GitHubLink p={p} className="shrink-0" />
-                  </div>
-                </div>
-              );
-            }
-
-            // ── Pattern E: Asymmetric ──
-            if (pattern === "asymmetric") {
-              return (
-                <div
-                  key={p.name}
-                  className="border-b border-border-default px-6 py-10 last:border-b-0 sm:px-10 sm:py-14"
-                >
-                  <div className="mx-auto max-w-6xl">
-                    <div className="flex justify-between">
-                      <OrnamentCross size={28} opacity={0.1} />
-                      <OrnamentCircle size={24} opacity={0.08} />
-                    </div>
-                    <div className="mt-4 sm:mt-6">
-                      <p className="text-right text-2xl font-bold leading-tight tracking-tight sm:text-3xl">
-                        <ProjectName p={p} />
-                      </p>
-                      <p className="ml-auto mt-2 max-w-md text-right text-sm leading-relaxed text-text-secondary sm:text-base">
-                        {p.desc}
-                      </p>
-                    </div>
-                    <div className="mt-4 text-right">
-                      <GitHubLink p={p} />
-                    </div>
-                  </div>
-                </div>
-              );
-            }
-
-            return null;
-          })}
+          {projects.map((p, i) => (
+            <ProjectSection key={p.slug} p={p} i={i} />
+          ))}
         </section>
 
         {/* ── Data Strip ── */}
-        <section className="border-t border-b border-border-default">
-          <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-center gap-x-8 gap-y-2 px-6 py-4 text-xs font-bold tracking-wider uppercase text-text-muted sm:px-10 sm:py-5 sm:text-xs">
+        <section className="border-y border-border-default">
+          <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-center gap-x-8 gap-y-2 px-6 py-4 text-xs font-bold tracking-wider uppercase text-text-muted sm:px-10 sm:py-5">
             <span>Open Source</span>
             <span>Built by Sparsh Sam</span>
             <span>Toronto, Canada</span>
@@ -419,15 +269,16 @@ export default function Home() {
             <nav className="flex gap-6">
               <a
                 href="https://github.com/sparshsam"
-                target="_blank" rel="noopener noreferrer"
-                className="text-xs text-text-secondary transition-colors hover:text-text-primary"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs text-text-secondary transition-colors hover:text-accent"
               >
                 GitHub
               </a>
-              <a href="/privacy" className="text-xs text-text-secondary transition-colors hover:text-text-primary">
+              <a href="/privacy" className="text-xs text-text-secondary transition-colors hover:text-accent">
                 Privacy
               </a>
-              <a href="/terms" className="text-xs text-text-secondary transition-colors hover:text-text-primary">
+              <a href="/terms" className="text-xs text-text-secondary transition-colors hover:text-accent">
                 Terms
               </a>
             </nav>
