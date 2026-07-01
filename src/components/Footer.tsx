@@ -17,6 +17,7 @@ export default function Footer() {
             <p className="text-sm font-bold tracking-widest uppercase text-text-primary">Kovina</p>
             <p className="mt-1 text-xs text-text-secondary">Forged tools for everyday life.</p>
           </div>
+          <div className="flex flex-col items-end gap-2">
           <nav className="flex gap-6">
             <a
               href="https://github.com/sparshsam"
@@ -33,6 +34,8 @@ export default function Footer() {
               Terms
             </a>
           </nav>
+          <p className="text-[10px] text-text-muted/50">Built with Kovina Brand Assets v1.0.0</p>
+          </div>
         </div>
       </footer>
     </>

@@ -23,6 +23,15 @@ export const metadata: Metadata = {
   title: "Kovina — Personal Software. Forged to Last.",
   description:
     "A collection of open-source tools built for ownership, permanence, and everyday use. Forged by Sparsh Sam in Toronto.",
+  icons: {
+    icon: [
+      { url: "/kovina-favicon.svg", type: "image/svg+xml" },
+      { url: "/kovina-favicon-32.png", sizes: "32x32", type: "image/png" },
+      { url: "/kovina-favicon-64.png", sizes: "64x64", type: "image/png" },
+      { url: "/kovina-favicon-128.png", sizes: "128x128", type: "image/png" },
+      { url: "/kovina-favicon-256.png", sizes: "256x256", type: "image/png" },
+    ],
+  },
   openGraph: {
     title: "Kovina",
     description:
@@ -31,12 +40,14 @@ export const metadata: Metadata = {
     siteName: "Kovina",
     locale: "en_US",
     type: "website",
+    images: [{ url: "/kovina-social.png", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Kovina",
     description:
       "Personal software. Forged to last.",
+    images: ["/kovina-social.png"],
   },
   robots: {
     index: true,
@@ -48,6 +59,7 @@ export const metadata: Metadata = {
     "open source",
     "personal software",
     "forge",
+    "Kovina Brand Assets v1.0.0",
     "tools",
     "Sparsh Sam",
   ],

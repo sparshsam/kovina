@@ -122,5 +122,6 @@ Kovina is free software: you can redistribute it and/or modify it under the term
 
 <p align="center">
   <strong>Forged tools for everyday life.</strong><br>
-  Built by <a href="https://github.com/sparshsam">Sparsh Sam</a> in Toronto, Canada.
+  Built by <a href="https://github.com/sparshsam">Sparsh Sam</a> in Toronto, Canada.<br>
+  <sub><a href="assets/branding/RELEASE.md">Brand Assets v1.0.0</a> · <a href="standards/">Standards v1.0.0</a></sub>
 </p>
