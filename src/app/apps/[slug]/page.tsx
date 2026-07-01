@@ -1,5 +1,6 @@
 import { use } from "react";
-import ThemeToggle from "@/components/ThemeToggle";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import { projects, projectBySlug, projectStatus } from "@/lib/projects";
 import { appContent } from "@/lib/project-content";
 
@@ -37,30 +38,7 @@ export default function AppPage({ params }: { params: Promise<{ slug: string }> 
 
   return (
     <>
-      <header className="sticky top-0 z-50 bg-bg-base/90 backdrop-blur-md">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-3 sm:px-10">
-          <a href="/" className="text-sm font-bold tracking-widest uppercase text-text-primary">
-            Kovina
-          </a>
-          <div className="flex items-center gap-3 sm:gap-4">
-            <a
-              href="/#projects"
-              className="rounded-full px-3 py-2 text-xs font-semibold text-text-secondary transition-colors hover:bg-accent hover:text-white sm:px-4"
-            >
-              All Projects
-            </a>
-            <a
-              href="https://github.com/sparshsam"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-full px-3 py-2 text-xs font-semibold text-text-secondary transition-colors hover:bg-accent hover:text-white sm:px-4"
-            >
-              GitHub
-            </a>
-            <ThemeToggle />
-          </div>
-        </div>
-      </header>
+      <Header showAllProjects />
 
       <main>
         <section className="px-6 pt-28 sm:px-10 sm:pt-40">
@@ -198,38 +176,7 @@ export default function AppPage({ params }: { params: Promise<{ slug: string }> 
           </div>
         </section>
 
-        <section className="border-y border-border-default">
-          <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-center gap-x-8 gap-y-2 px-6 py-4 text-xs font-bold tracking-wider uppercase text-text-muted sm:px-10 sm:py-5">
-            <span>Open Source</span>
-            <span>Built by Sparsh Sam</span>
-            <span>Toronto, Canada</span>
-          </div>
-        </section>
-
-        <footer className="border-t border-border-default px-6 py-12 sm:px-10">
-          <div className="mx-auto flex max-w-6xl flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
-            <div>
-              <p className="text-sm font-bold tracking-widest uppercase text-text-primary">Kovina</p>
-              <p className="mt-1 text-xs text-text-secondary">Forged tools for everyday life.</p>
-            </div>
-            <nav className="flex gap-6">
-              <a
-                href="https://github.com/sparshsam"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-xs text-text-secondary transition-colors hover:text-accent"
-              >
-                GitHub
-              </a>
-              <a href="/privacy" className="text-xs text-text-secondary transition-colors hover:text-accent">
-                Privacy
-              </a>
-              <a href="/terms" className="text-xs text-text-secondary transition-colors hover:text-accent">
-                Terms
-              </a>
-            </nav>
-          </div>
-        </footer>
+      <Footer />
       </main>
     </>
   );
