@@ -36,6 +36,15 @@ kovina/
 │   ├── gallery/        # Additional gallery images
 │   ├── icons/          # SVG icons (light/dark)
 │   └── branding/       # Brand assets
+├── standards/          # Ecosystem standards (read before every session)
+│   ├── KOVINA_MANIFESTO.md
+│   ├── BRAND_GUIDELINES.md
+│   ├── DESIGN_PLAYBOOK.md
+│   ├── PRODUCT_ARCHITECTURE_PLAYBOOK.md
+│   ├── MCP_SERVER_BUILD_GUIDE.md
+│   ├── RELEASE_PROCESS.md
+│   ├── TESTING_STANDARD.md
+│   └── DOCUMENTATION_STANDARD.md
 ├── docs/
 │   ├── Development.md
 │   ├── Architecture.md

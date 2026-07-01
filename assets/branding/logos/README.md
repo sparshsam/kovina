@@ -37,11 +37,4 @@
 | **Case** | Uppercase | Uppercase |
 | **Color** | #111111 / #FFFFFF | #111111 |
 
-## Usage
-
-- The SVG files are the source of truth. Never recreate the logo manually.
-- For print production, open the SVG in a design tool and convert text to outlines.
-- Always prefer the SVG over rasterized versions.
-- Maintain clear space equal to the height of "K" on all sides of the wordmark.
-- Minimum size: 80px wide (digital), 25mm (print).
-- Below minimum size, use the header variant.
+For the full brand identity system, see `standards/BRAND_GUIDELINES.md`.

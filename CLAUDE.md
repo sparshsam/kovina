@@ -39,9 +39,14 @@
 
 **CI:** Repo at github.com/sparshsam/kovina. Main branch auto-deploys to Cloudflare Pages.
 
-**Brand assets:** `assets/branding/BRAND_GUIDELINES.md` — full identity system (wordmark SVGs, colors, logo hierarchy, icon philosophy, naming convention, repository standards)
+**Brand assets:** `assets/branding/` — wordmark SVGs (black, white, header, favicon, social)
 
-**Reference documents (shared across all Open* projects):**
-- `references/DESIGN_PLAYBOOK.md` — UI/UX design system
-- `references/PRODUCT_ARCHITECTURE_PLAYBOOK.md` — architecture patterns
-- `references/MCP-SERVER-BUILD-GUIDE.md` — MCP server specification
+**Ecosystem standards (shared across all Open* projects — read before every session):**
+- `standards/KOVINA_MANIFESTO.md` — Constitution: why Kovina exists, what belongs, principles
+- `standards/BRAND_GUIDELINES.md` — Brand identity system
+- `standards/DESIGN_PLAYBOOK.md` — UI/UX design system
+- `standards/PRODUCT_ARCHITECTURE_PLAYBOOK.md` — Architecture patterns
+- `standards/MCP-SERVER-BUILD-GUIDE.md` — MCP server specification
+- `standards/RELEASE_PROCESS.md` — Release lifecycle and checklist
+- `standards/TESTING_STANDARD.md` — Testing requirements
+- `standards/DOCUMENTATION_STANDARD.md` — Documentation requirements
