@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;900&amp;display=swap');
+      text { font-family: 'Inter', 'Arial', sans-serif; }
+      .title { font-weight: 900; }
+      .subtitle { font-weight: 400; }
+    </style>
+  </defs>
+  <rect width="1200" height="630" fill="#111111"/>
+  <text x="600" y="340" font-size="144" text-anchor="middle" letter-spacing="-0.03em" fill="#FFFFFF" class="title">KOVINA</text>
+  <text x="600" y="390" font-size="18" text-anchor="middle" letter-spacing="0.05em" fill="#555555" class="subtitle">PERSONAL SOFTWARE. FORGED TO LAST.</text>
+</svg>

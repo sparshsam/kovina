@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@900&amp;display=swap');
+      text { font-family: 'Inter', 'Arial Black', sans-serif; font-weight: 900; }
+    </style>
+  </defs>
+  <rect width="64" height="64" rx="8" fill="#099019"/>
+  <text x="32" y="45" font-size="34" text-anchor="middle" letter-spacing="-0.03em" fill="#FFFFFF">K</text>
+</svg>
