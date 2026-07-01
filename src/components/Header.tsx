@@ -2,7 +2,7 @@ import ThemeToggle from "./ThemeToggle";
 
 export default function Header({ showAllProjects = false }: { showAllProjects?: boolean }) {
   return (
-    <header className="sticky top-0 z-50 bg-bg-base/90 backdrop-blur-md">
+    <header className="relative sticky top-0 z-50 bg-bg-base/90 backdrop-blur-md">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-3 sm:px-10">
         <a
           href="/"
@@ -10,7 +10,7 @@ export default function Header({ showAllProjects = false }: { showAllProjects?: 
         >
           Kovina
         </a>
-        <div className="flex items-center gap-4">
+        <nav className="flex items-center gap-4">
           {showAllProjects && (
             <a
               href="/#projects"
@@ -27,8 +27,10 @@ export default function Header({ showAllProjects = false }: { showAllProjects?: 
           >
             GitHub
           </a>
-          <ThemeToggle />
-        </div>
+        </nav>
+      </div>
+      <div className="absolute right-0 top-1/2 z-50 -translate-y-1/2">
+        <ThemeToggle />
       </div>
     </header>
   );
