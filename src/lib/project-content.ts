@@ -9,6 +9,16 @@ export type AppContent = {
 };
 
 export const appContent: Record<string, AppContent> = {
+  "opensnap": {
+    longDesc: 'Screenshot and OCR widget for Windows. C# WPF. AGPLv3. Live at snap.kovina.org.',
+    features: [
+      { title: 'Floating Glass Capsule UI', body: 'OpenSnap lives on your screen as a translucent 240x36 px glass capsule — click to capture full screen, active window, or drag-select an area. Drag to move it anywhere. No menus, no setup. One click, saved and copied.' },
+      { title: 'Three Capture Modes', body: 'Full multi-monitor desktop, active window, or area selection — all accessible from the same floating pill. Use Win+Shift+S for full screen and Win+Shift+W for active window. The area selector shows a crosshair with pixel dimensions.' },
+      { title: 'Built-in OCR via Windows Engine', body: 'Extract text from any screen region using the Windows OCR engine. Text is copied to your clipboard alongside the image. Supports English, French, German, Spanish, and Japanese — switch anytime in Settings.' },
+      { title: 'Post-Capture Workflow', body: 'After capture: copy the image to clipboard, run OCR, open in Paint for quick annotations, reveal in File Explorer, or open with your preferred image editor. Custom filename templates support project prefixes, sequential numbering, and date-based subfolders.' },
+      { title: 'Privacy-First and Local-Only', body: 'No login, no cloud, no telemetry. Every screenshot stays on your machine. OpenSnap is a C# WPF application for Windows with configurable hotkeys, system tray integration, and auto-start on boot.' },
+    ],
+  },
   "openreader": {
     longDesc: 'Privacy-first, local-only PDF utility for Windows. Python/PySide6/PyMuPDF. AGPLv3. Available on the Microsoft Store.',
     features: [
