@@ -32,7 +32,7 @@ Every Kovina tool is free, open-source, and built with a single principle: **sof
 | Application | Description | Status |
 |---|---|---|
 | [OpenReader](https://github.com/sparshsam/openreader) | Native PDF reader for Windows | [![Microsoft Store](https://img.shields.io/badge/Store-Live-0078D4)](https://apps.microsoft.com/detail/openreader) |
-| [OpenSnap](https://github.com/sparshsam/opensnap) | Screenshot and OCR widget for Windows | [![Microsoft Store](https://img.shields.io/badge/Store-Live-0078D4)](https://snap.kovina.org) |
+| [OpenSnap](https://github.com/sparshsam/opensnap) | Screenshot and OCR widget for Windows | [![Microsoft Store](https://img.shields.io/badge/Store-Live-0078D4)](https://apps.microsoft.com/detail/9NV4G1F09L41) |
 | [OpenSend](https://github.com/sparshsam/opensend) | Free, open-source file sharing | [![Website](https://img.shields.io/badge/Web-Live-success)](https://send.kovina.org) |
 | [Hisstastic](https://github.com/sparshsam/hisstastic) | Casual snake game | [![Website](https://img.shields.io/badge/Web-Live-success)](https://hisstastic.vercel.app) |
 | [WordWise](https://github.com/sparshsam/wordwise) | Language and vocabulary tool | [![Website](https://img.shields.io/badge/Web-Live-success)](https://wordwisehiccups.vercel.app) |

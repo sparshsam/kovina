@@ -10,7 +10,7 @@ export type AppContent = {
 
 export const appContent: Record<string, AppContent> = {
   "opensnap": {
-    longDesc: 'Screenshot and OCR widget for Windows. C# WPF. AGPLv3. Live at snap.kovina.org.',
+    longDesc: 'Screenshot and OCR widget for Windows. C# WPF. AGPLv3. Available on the Microsoft Store.',
     features: [
       { title: 'Floating Glass Capsule UI', body: 'OpenSnap lives on your screen as a translucent 240x36 px glass capsule — click to capture full screen, active window, or drag-select an area. Drag to move it anywhere. No menus, no setup. One click, saved and copied.' },
       { title: 'Three Capture Modes', body: 'Full multi-monitor desktop, active window, or area selection — all accessible from the same floating pill. Use Win+Shift+S for full screen and Win+Shift+W for active window. The area selector shows a crosshair with pixel dimensions.' },
