@@ -11,9 +11,9 @@ export default function Header({ showAllProjects = false }: { showAllProjects?: 
           <img
             src="/kovina-wordmark-header.svg"
             alt="Kovina"
-            className="h-5 w-auto"
-            width="120"
-            height="20"
+            className="h-[26px] w-auto"
+            width="156"
+            height="26"
           />
         </a>
         <nav className="flex items-center gap-4">
