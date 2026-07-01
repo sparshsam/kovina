@@ -6,9 +6,15 @@ export default function Header({ showAllProjects = false }: { showAllProjects?: 
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-3 sm:px-10">
         <a
           href="/"
-          className="text-sm font-bold tracking-widest uppercase text-text-primary"
+          className="block leading-none"
         >
-          Kovina
+          <img
+            src="/kovina-wordmark-header.svg"
+            alt="Kovina"
+            className="h-5 w-auto"
+            width="120"
+            height="20"
+          />
         </a>
         <nav className="flex items-center gap-4">
           {showAllProjects && (
