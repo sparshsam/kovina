@@ -25,6 +25,30 @@
 - **Deployment:** Cloudflare Pages (direct upload via wrangler)
 - **Domain:** kovina.org (Cloudflare zone active)
 
+## Repository Structure
+
+```
+kovina/
+├── assets/
+│   ├── hero/           # Hero screenshots
+│   ├── screenshots/    # Gallery screenshots
+│   ├── gallery/        # Additional gallery images
+│   ├── icons/          # SVG icons (light/dark)
+│   └── branding/       # Brand assets
+├── docs/
+│   ├── Development.md
+│   ├── Architecture.md
+│   ├── Deployment.md
+│   ├── Testing.md
+│   └── Contributing.md
+├── src/                # Application source
+├── public/             # Static assets (app-icons, fonts)
+├── CHANGELOG.md
+├── README.md           # Premium landing page
+├── AGENTS.md           # Agent operating notes
+└── CLAUDE.md           # Claude configuration
+```
+
 ## Page Structure
 
 1. **Sticky Header** — Wordmark + Projects link + GitHub link + Theme toggle

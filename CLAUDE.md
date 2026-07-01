@@ -8,18 +8,27 @@
 - `src/app/page.tsx` — Main landing page (Hero, Editorial, Projects, Data Strip, Footer)
 - `src/app/layout.tsx` — Root layout (Inter font, SEO metadata, theme FOUC script)
 - `src/app/globals.css` — Tailwind v4 design tokens, dark/light CSS variables
-- `src/app/ornaments.css` — Abstract decorative element utilities
 - `src/components/ThemeToggle.tsx` — Dark/light toggle (localStorage-backed)
+- `src/lib/projects.ts` — Project data array (order, slugs, status)
+- `src/lib/project-content.ts` — App feature content for detail pages
+- `src/app/apps/[slug]/page.tsx` — Individual app detail page component
 - `public/_redirects` — Cloudflare Pages www → root redirect
+- `public/app-icons/` — App screenshot PNGs for project sections
 - `next.config.ts` — Static export config
 
 **Build:** `npm run build` → `out/`
-**Deploy:** `bash /tmp/deploy_kovina.sh`
+**Deploy:** `npx wrangler pages deploy out --project-name kovina --branch main`
 
 **Design constraints:**
 - No cards, no bordered containers, no gradients, no animations
 - All buttons pill-shaped
-- Only changes to `src/app/page.tsx` and `src/app/globals.css` should be needed for content/tone updates
-- To add/remove/reorder projects, edit the `projects` array in `page.tsx`
+- To add/remove/reorder projects, edit `src/lib/projects.ts`
+- To add/change app content, edit `src/lib/project-content.ts`
 
-**CI:** Repo at github.com/sparshsam/kovina. Pushes to main don't auto-deploy (direct upload workflow). Re-deploy via wrangler after rebuild.
+**Repository structure:**
+- `README.md` — Premium landing page (showroom-style)
+- `docs/` — Developer documentation (Development, Architecture, Deployment, Contributing)
+- `assets/` — Hero screenshots, gallery images, icons, branding
+- `CHANGELOG.md` — Release history
+
+**CI:** Repo at github.com/sparshsam/kovina. Main branch auto-deploys to Cloudflare Pages.
