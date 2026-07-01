@@ -102,8 +102,10 @@ export default function AppPage({ params }: { params: Promise<{ slug: string }> 
                   rel="noopener noreferrer"
                   className="inline-flex min-h-[44px] items-center gap-2 rounded-full bg-accent px-7 py-3.5 text-sm font-semibold text-white transition-[filter] hover:brightness-110"
                 >
-                  <svg viewBox="0 0 24 24" fill="currentColor" className="size-5">
-                    <path d="M2 3h9l.01 9H2V3zm0 9h9v9H2v-9zm11-9h9v9h-9V3zm0 9h9v9h-9v-9z"/>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="size-5">
+                    <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/>
+                    <path d="M3 6h18"/>
+                    <path d="M16 10a4 4 0 0 1-8 0"/>
                   </svg>
                   Microsoft Store
                 </a>
