@@ -11,7 +11,14 @@ export default function Header({ showAllProjects = false }: { showAllProjects?: 
           <img
             src="/kovina-wordmark-header.svg"
             alt="Kovina"
-            className="h-[26px] w-auto"
+            className="h-[26px] w-auto light-logo"
+            width="156"
+            height="26"
+          />
+          <img
+            src="/kovina-wordmark-header-white.svg"
+            alt="Kovina"
+            className="h-[26px] w-auto dark-logo"
             width="156"
             height="26"
           />

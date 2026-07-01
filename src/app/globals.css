@@ -48,6 +48,12 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Theme-aware header logo: dark mode shows white, light mode shows black */
+html:not(.light) .light-logo { display: none; }
+html:not(.light) .dark-logo { display: block; }
+html.light .light-logo { display: block; }
+html.light .dark-logo { display: none; }
+
 body {
   background-color: var(--bg-base);
   color: var(--text-primary);
