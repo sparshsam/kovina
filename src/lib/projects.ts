@@ -31,12 +31,12 @@ export const projects: Project[] = [
   { slug: "openreader",        name: "OpenReader",        desc: "Native PDF reader for Windows.",                  storeUrl: "https://apps.microsoft.com/detail/9MXDVW2645LL", website: "https://reader.kovina.org", repo: "openreader", underDev: false, isDesktop: true  },
   { slug: "opensnap",          name: "OpenSnap",          desc: "Screenshot and OCR widget for Windows.",           storeUrl: "https://apps.microsoft.com/detail/9NV4G1F09L41", website: "https://snap.kovina.org", repo: "opensnap", underDev: false, isDesktop: true  },
   { slug: "opensend",          name: "OpenSend",          desc: "Free, open-source file sharing.",                 website: "https://send.kovina.org",                 repo: "opensend",            underDev: false, isDesktop: false },
+  { slug: "openpalette",       name: "OpenPalette",       desc: "Color and palette utility.",                      website: "https://palette.kovina.org",               repo: "openpalette",         underDev: false, isDesktop: false },
   { slug: "hisstastic",        name: "Hisstastic",        desc: "Casual snake game.",                              website: "https://hisstastic.vercel.app",            repo: "hisstastic",          underDev: false, isDesktop: false },
   { slug: "wordwise",          name: "WordWise",          desc: "Language and vocabulary tool.",                   website: "https://wordwisehiccups.vercel.app",       repo: "wordwise",            underDev: false, isDesktop: false },
 
   // ── In Development ──
   { slug: "openledger",        name: "OpenLedger",        desc: "Personal finance and net worth tracking.",         website: "https://ledger.kovina.org",                repo: "openledger",          underDev: true,  isDesktop: false },
-  { slug: "openpalette",       name: "OpenPalette",       desc: "Color and palette utility.",                      website: "https://palette.kovina.org",               repo: "openpalette",         underDev: true,  isDesktop: false },
   { slug: "opentone",          name: "OpenTone",          desc: "Desktop music player.",                           website: "https://tone.kovina.org",                  repo: "opentone",            underDev: true,  isDesktop: false },
   { slug: "opensprout",        name: "OpenSprout",        desc: "Plant care and gardening companion.",             website: "https://sprout.kovina.org",                repo: "opensprout",          underDev: true,  isDesktop: false },
   { slug: "openjournal",       name: "OpenJournal",       desc: "Personal journaling and reflection.",              website: "https://journal.kovina.org",               repo: "openjournal",         underDev: true,  isDesktop: false },
