@@ -17,13 +17,15 @@
 - `src/lib/projects.ts` — Canonical project list with `storeUrl`, `website`, `slug`, `repo`, status flags
 - `src/lib/project-content.ts` — App feature content for all 18 detail pages
 - `public/_redirects` — Cloudflare Pages www → root redirect
-- `public/app-icons/` — App screenshot PNGs (13 with icons, 4 slugs use placeholders)
+- `public/_headers` — Cloudflare edge caching policy (prevent HTML caching)
+- `public/app-icons/` — App screenshot PNGs (14 with icons, 4 slugs use placeholders)
 - `public/fonts/` — NotoSansSymbols2-Regular.ttf
 - `next.config.ts` — Static export config
 
 **Build:** `npm run build` → `out/`
 **Deploy:** `npx wrangler pages deploy out --project-name kovina --branch main`
 **Cache purge (always after deploy):** `curl -X POST .../purge_cache -d '{"purge_everything":true}'`
+**Cache policy:** `public/_headers` prevents HTML caching at edge; hashed assets (`_next/static/*`, `/fonts/*`) cached permanently.
 
 **Design constraints:**
 - No cards, no bordered containers, no gradients, no animations

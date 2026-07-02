@@ -65,8 +65,9 @@ kovina/
 │       ├── projects.ts           # Canonical project list with slugs, store/website URLs
 │       └── project-content.ts    # App feature content for detail pages
 ├── public/
-│   ├── app-icons/       # App screenshot PNGs (13 with icons, 4 use placeholders)
+│   ├── app-icons/       # App screenshot PNGs (14 with icons, 4 use placeholders)
 │   ├── fonts/           # NotoSansSymbols2-Regular.ttf
+│   ├── _headers         # Cloudflare edge caching policy (no-cache on HTML)
 │   └── _redirects       # www → root redirect
 ├── CHANGELOG.md
 ├── README.md            # Premium landing page (showroom-style)
@@ -125,10 +126,10 @@ Apps with existing third-party URLs retain them (Hisstastic, WordWise, Chess by 
 | 1 | OpenReader | Live (Store) | reader.kovina.org / Microsoft Store | openreader |
 | 2 | OpenSnap | Live (Store) | snap.kovina.org / Microsoft Store | opensnap |
 | 3 | OpenSend | Live | send.kovina.org | opensend |
-| 4 | Hisstastic | Live | hisstastic.vercel.app | hisstastic |
-| 5 | WordWise | Live | wordwisehiccups.vercel.app | wordwise |
-| 6 | OpenLedger | Dev | ledger.kovina.org | openledger |
-| 7 | OpenPalette | Dev | palette.kovina.org | openpalette |
+| 4 | OpenPalette | Live | palette.kovina.org | openpalette |
+| 5 | Hisstastic | Live | hisstastic.vercel.app | hisstastic |
+| 6 | WordWise | Live | wordwisehiccups.vercel.app | wordwise |
+| 7 | OpenLedger | Dev | ledger.kovina.org | openledger |
 | 8 | OpenTone | Dev | tone.kovina.org | opentone |
 | 9 | OpenSprout | Dev | sprout.kovina.org | opensprout |
 | 10 | OpenJournal | Dev | journal.kovina.org | openjournal |
@@ -208,6 +209,7 @@ type Project = {
 - **Deploy:** `npx wrangler pages deploy out --project-name kovina --branch main`
 - **Cache purge:** `curl -X POST "https://api.cloudflare.com/client/v4/zones/9bb7363fbddb97ee545828c205b7dd9c/purge_cache" -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" -H "Content-Type: application/json" -d '{"purge_everything":true}'`
 - **Always purge cache after deploy** — CSS filenames change with each build, stale edge cache causes 404s.
+- **Cache policy:** `public/_headers` prevents edge caching of HTML pages; hashed assets (`_next/static/*`, `/fonts/*`) cached permanently.
 - **Custom domains:** kovina.org, www.kovina.org (both CNAME → kovina.pages.dev, proxied)
 - **www redirect:** `_redirects` file handles 301 from www → root.
 
