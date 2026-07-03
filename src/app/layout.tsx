@@ -25,6 +25,7 @@ export const metadata: Metadata = {
     "A collection of open-source tools built for ownership, permanence, and everyday use. Forged by Sparsh Sam in Toronto.",
   icons: {
     icon: [
+      { url: "/favicon.ico", sizes: "any" },
       { url: "/kovina-favicon.svg", type: "image/svg+xml" },
       { url: "/kovina-favicon-32.png", sizes: "32x32", type: "image/png" },
       { url: "/kovina-favicon-64.png", sizes: "64x64", type: "image/png" },

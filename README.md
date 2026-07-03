@@ -34,20 +34,20 @@ Every Kovina tool is free, open-source, and built with a single principle: **sof
 | [OpenReader](https://github.com/sparshsam/openreader) | Native PDF reader for Windows | [![Microsoft Store](https://img.shields.io/badge/Store-Live-0078D4)](https://apps.microsoft.com/detail/openreader) |
 | [OpenSnap](https://github.com/sparshsam/opensnap) | Screenshot and OCR widget for Windows | [![Microsoft Store](https://img.shields.io/badge/Store-Live-0078D4)](https://apps.microsoft.com/detail/9NV4G1F09L41) |
 | [OpenSend](https://github.com/sparshsam/opensend) | Free, open-source file sharing | [![Website](https://img.shields.io/badge/Web-Live-success)](https://send.kovina.org) |
+| [OpenPalette](https://github.com/sparshsam/openpalette) | Color and palette utility | [![Website](https://img.shields.io/badge/Web-Live-success)](https://palette.kovina.org) |
 | [Hisstastic](https://github.com/sparshsam/hisstastic) | Casual snake game | [![Website](https://img.shields.io/badge/Web-Live-success)](https://hisstastic.vercel.app) |
 | [WordWise](https://github.com/sparshsam/wordwise) | Language and vocabulary tool | [![Website](https://img.shields.io/badge/Web-Live-success)](https://wordwisehiccups.vercel.app) |
-| [OpenLedger](https://github.com/sparshsam/openledger) | Personal finance and net worth tracking | [![Website](https://img.shields.io/badge/Web-Preview-yellow)](https://openledgerbysparsh.vercel.app) |
-| [OpenPalette](https://github.com/sparshsam/openpalette) | Color and palette utility | [![Website](https://img.shields.io/badge/Web-Preview-yellow)](https://openpalette-delta.vercel.app) |
+| [OpenLedger](https://github.com/sparshsam/openledger) | Personal finance and net worth tracking | [![Website](https://img.shields.io/badge/Web-Live-success)](https://ledger.kovina.org) |
+| [OpenSprout](https://github.com/sparshsam/opensprout) | Plant care and gardening companion | [![Website](https://img.shields.io/badge/Web-Live-success)](https://sprout.kovina.org) |
+| [OpenProof](https://github.com/sparshsam/openproof) | Proof of existence and verification | [![Website](https://img.shields.io/badge/Web-Live-success)](https://proof.kovina.org) |
 | [OpenTone](https://github.com/sparshsam/opentone) | Desktop music player | — |
-| [OpenSprout](https://github.com/sparshsam/opensprout) | Plant care and gardening companion | [![Website](https://img.shields.io/badge/Web-Preview-yellow)](https://opensprout.vercel.app) |
 | [OpenJournal](https://github.com/sparshsam/openjournal) | Personal journaling and reflection | — |
-| [OpenProof](https://github.com/sparshsam/openproof) | Proof of existence and verification | [![Website](https://img.shields.io/badge/Web-Preview-yellow)](https://openproof.vercel.app) |
 | [OpenConvert](https://github.com/sparshsam/openconvert) | Privacy-first file conversion tools | — |
-| [OpenScrabble](https://github.com/sparshsam/openscrabble) | Two-player word game | [![Website](https://img.shields.io/badge/Web-Preview-yellow)](https://openscrabble.vercel.app) |
+| [OpenScrabble](https://github.com/sparshsam/openscrabble) | Two-player word game | [![Website](https://img.shields.io/badge/Web-Preview-yellow)](https://scrabble.kovina.org) |
 | [Chess by Sparsh](https://github.com/sparshsam/chess-by-sparsh) | Interactive chess with AI opponent | [![Website](https://img.shields.io/badge/Web-Preview-yellow)](https://chess-by-sparsh.vercel.app) |
 | [World Clock Widget](https://github.com/sparshsam/world-clock-widget) | Desktop world clock utility | — |
 | [SheSafe](https://github.com/sparshsam/shesafe) | Community safety mapping | [![Website](https://img.shields.io/badge/Web-Preview-yellow)](https://isshesafe.vercel.app) |
-| [Elora Vault](https://github.com/sparshsam/elora-vault) | Onchain capital infrastructure | [![Website](https://img.shields.io/badge/Web-Preview-yellow)](https://elora-bet-api.vercel.app) |
+| [Elora Vault](https://github.com/sparshsam/elora-vault) | Onchain capital infrastructure | [![Website](https://img.shields.io/badge/Web-Preview-yellow)](https://vault.kovina.org) |
 | [Sparsh Sam](https://github.com/sparshsam/sparshsam.github.io) | Personal site and portfolio | [![Website](https://img.shields.io/badge/Web-Live-success)](https://sparshsam.github.io) |
 
 <br>
@@ -78,9 +78,9 @@ You can use them today, keep them forever, and modify them if you need something
 
 ## Gallery
 
-| Landing page | App detail |
-|---|---|
-| <img src="assets/screenshots/kovina-full.png" width="400" alt="Kovina landing page"> | <img src="assets/screenshots/openreader-app.png" width="400" alt="OpenReader app page"> |
+<p align="center">
+  <img src="assets/screenshots/kovina-full.png" width="800" alt="Kovina landing page" style="border-radius: 12px;">
+</p>
 
 <br>
 
@@ -100,7 +100,7 @@ You can use them today, keep them forever, and modify them if you need something
 
 | Version | Date | Highlights |
 |---|---|---|
-| v0.1 | Jun 2026 | Initial launch with editorial exhibition design, app icon showcase, 17 project listings, individual app detail pages |
+| v1.0 | Jul 2026 | Stable release — all 18 project detail pages, Kovina favicon across all pages, updated app statuses (OpenPalette/OpenLedger/OpenSprout/OpenProof to Live), OpenReader site restored, dark/light themed icons, Cloudflare Pages deployment |
 
 [Full changelog →](CHANGELOG.md)
 
