@@ -37,9 +37,9 @@ Every Kovina tool is free, open-source, and built with a single principle: **sof
 | [OpenPalette](https://github.com/sparshsam/openpalette) | Color and palette utility | [![Website](https://img.shields.io/badge/Web-Live-success)](https://palette.kovina.org) |
 | [Hisstastic](https://github.com/sparshsam/hisstastic) | Casual snake game | [![Website](https://img.shields.io/badge/Web-Live-success)](https://hisstastic.vercel.app) |
 | [WordWise](https://github.com/sparshsam/wordwise) | Language and vocabulary tool | [![Website](https://img.shields.io/badge/Web-Live-success)](https://wordwisehiccups.vercel.app) |
-| [OpenLedger](https://github.com/sparshsam/openledger) | Personal finance and net worth tracking | [![Website](https://img.shields.io/badge/Web-Live-success)](https://ledger.kovina.org) |
-| [OpenSprout](https://github.com/sparshsam/opensprout) | Plant care and gardening companion | [![Website](https://img.shields.io/badge/Web-Live-success)](https://sprout.kovina.org) |
-| [OpenProof](https://github.com/sparshsam/openproof) | Proof of existence and verification | [![Website](https://img.shields.io/badge/Web-Live-success)](https://proof.kovina.org) |
+| [OpenLedger](https://github.com/sparshsam/openledger) | Personal finance and net worth tracking | [![Website](https://img.shields.io/badge/Web-Preview-yellow)](https://ledger.kovina.org) |
+| [OpenSprout](https://github.com/sparshsam/opensprout) | Plant care and gardening companion | [![Website](https://img.shields.io/badge/Web-Preview-yellow)](https://sprout.kovina.org) |
+| [OpenProof](https://github.com/sparshsam/openproof) | Proof of existence and verification | [![Website](https://img.shields.io/badge/Web-Preview-yellow)](https://proof.kovina.org) |
 | [OpenTone](https://github.com/sparshsam/opentone) | Desktop music player | — |
 | [OpenJournal](https://github.com/sparshsam/openjournal) | Personal journaling and reflection | — |
 | [OpenConvert](https://github.com/sparshsam/openconvert) | Privacy-first file conversion tools | — |
@@ -100,7 +100,7 @@ You can use them today, keep them forever, and modify them if you need something
 
 | Version | Date | Highlights |
 |---|---|---|
-| v1.0 | Jul 2026 | Stable release — all 18 project detail pages, Kovina favicon across all pages, updated app statuses (OpenPalette/OpenLedger/OpenSprout/OpenProof to Live), OpenReader site restored, dark/light themed icons, Cloudflare Pages deployment |
+| v1.0 | Jul 2026 | Stable release — all 18 project detail pages, Kovina favicon across all pages, updated app statuses (OpenPalette to Live, moved up in listing), OpenReader site restored, dark/light themed icons, Cloudflare Pages deployment |
 
 [Full changelog →](CHANGELOG.md)
 
