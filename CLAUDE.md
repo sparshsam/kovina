@@ -85,14 +85,35 @@ If assets 404 but `kovina.org` HTML loads, the previous deployment was a preview
 **Brand assets:** `assets/branding/` — wordmark SVGs (black, white, header, favicon, social)
 
 **Ecosystem standards (shared across all Open* projects — read before every session):**
-- `standards/VERSION.md` — Version manifest (current: v1.0.0)
-- `standards/CHANGELOG.md` — Standards changelog
-- `standards/manifest.json` — Machine-readable version manifest
-- `standards/KOVINA_MANIFESTO.md` — Constitution: why Kovina exists, what belongs, principles
-- `standards/BRAND_GUIDELINES.md` — Brand identity system
-- `standards/DESIGN_PLAYBOOK.md` — UI/UI design system
-- `standards/PRODUCT_ARCHITECTURE_PLAYBOOK.md` — Architecture patterns
-- `standards/MCP-SERVER-BUILD-GUIDE.md` — MCP server specification
-- `standards/RELEASE_PROCESS.md` — Release lifecycle and checklist
-- `standards/TESTING_STANDARD.md` — Testing requirements
-- `standards/DOCUMENTATION_STANDARD.md` — Documentation requirements
+
+**Foundational** — read before every session:
+- `standards/foundational/KOVINA_MANIFESTO.md` — Constitution: why Kovina exists, what belongs, principles
+- `standards/foundational/BRAND_GUIDELINES.md` — Brand identity system
+- `standards/foundational/DESIGN_PLAYBOOK.md` — UI/UX design system
+- `standards/foundational/PRODUCT_ARCHITECTURE_PLAYBOOK.md` — Architecture patterns
+
+**Shared** — cross-platform requirements:
+- `standards/shared/APP_ICON_STANDARD.md` — Icon specification for all platforms
+- `standards/shared/ACCESSIBILITY_STANDARD.md` — Accessibility requirements across all platforms
+- `standards/shared/STORE_LISTING_STANDARD.md` — Store listing metadata and assets
+- `standards/shared/LOCALIZATION_STANDARD.md` — Internationalization and localization
+
+**Platforms** — per-surface requirements:
+- `standards/platforms/WEBSITE_STANDARD.md` — Website requirements (two archetypes)
+- `standards/platforms/PWA_STANDARD.md` — Progressive Web App requirements
+- `standards/platforms/WINDOWS_APP_STANDARD.md` — Windows application requirements
+- `standards/platforms/ANDROID_APP_STANDARD.md` — Android application requirements
+- `standards/platforms/IOS_APP_STANDARD.md` — iOS application requirements
+- `standards/platforms/MAC_APP_STANDARD.md` — macOS application requirements
+
+**Process** — engineering and documentation:
+- `standards/process/PROJECT_STRUCTURE_STANDARD.md` — Repository structure and conventions
+- `standards/process/DOCUMENTATION_STANDARD.md` — Documentation requirements
+- `standards/process/TESTING_STANDARD.md` — Testing requirements
+- `standards/process/RELEASE_PROCESS.md` — Release lifecycle and checklist
+
+**Protocols** — tooling and infrastructure:
+- `standards/protocols/MCP-SERVER-BUILD-GUIDE.md` — MCP server specification
+
+**Templates** — canonical scaffolding artifacts (consumed by OpenForge):
+- `standards/templates/` — README, CHANGELOG, CONTRIBUTING, SECURITY, ISSUE_TEMPLATE, PULL_REQUEST_TEMPLATE, release-notes, LICENSE_HEADER

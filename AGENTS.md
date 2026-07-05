@@ -40,14 +40,40 @@ kovina/
 │   ├── icons/          # SVG icons (light/dark)
 │   └── branding/       # Brand assets
 ├── standards/          # Ecosystem standards (read before every session)
-│   ├── KOVINA_MANIFESTO.md
-│   ├── BRAND_GUIDELINES.md
-│   ├── DESIGN_PLAYBOOK.md
-│   ├── PRODUCT_ARCHITECTURE_PLAYBOOK.md
-│   ├── MCP_SERVER_BUILD_GUIDE.md
-│   ├── RELEASE_PROCESS.md
-│   ├── TESTING_STANDARD.md
-│   └── DOCUMENTATION_STANDARD.md
+│   ├── foundational/     # Philosophy, brand, design, architecture
+│   │   ├── KOVINA_MANIFESTO.md
+│   │   ├── BRAND_GUIDELINES.md
+│   │   ├── DESIGN_PLAYBOOK.md
+│   │   └── PRODUCT_ARCHITECTURE_PLAYBOOK.md
+│   ├── shared/           # Cross-platform requirements
+│   │   ├── APP_ICON_STANDARD.md
+│   │   ├── ACCESSIBILITY_STANDARD.md
+│   │   ├── STORE_LISTING_STANDARD.md
+│   │   └── LOCALIZATION_STANDARD.md
+│   ├── platforms/        # Per-surface requirements
+│   │   ├── WEBSITE_STANDARD.md
+│   │   ├── PWA_STANDARD.md
+│   │   ├── WINDOWS_APP_STANDARD.md
+│   │   ├── ANDROID_APP_STANDARD.md
+│   │   ├── IOS_APP_STANDARD.md
+│   │   └── MAC_APP_STANDARD.md
+│   ├── process/          # Engineering and documentation
+│   │   ├── PROJECT_STRUCTURE_STANDARD.md
+│   │   ├── DOCUMENTATION_STANDARD.md
+│   │   ├── TESTING_STANDARD.md
+│   │   └── RELEASE_PROCESS.md
+│   ├── protocols/        # Tooling and infrastructure
+│   │   └── MCP-SERVER-BUILD-GUIDE.md
+│   ├── templates/        # Canonical scaffolding artifacts
+│   │   ├── README.template.md
+│   │   ├── CHANGELOG.template.md
+│   │   ├── CONTRIBUTING.template.md
+│   │   ├── SECURITY.template.md
+│   │   └── ...
+│   ├── VERSION.md
+│   ├── CHANGELOG.md
+│   ├── README.md
+│   └── manifest.json
 ├── docs/
 │   ├── Development.md
 │   ├── Architecture.md

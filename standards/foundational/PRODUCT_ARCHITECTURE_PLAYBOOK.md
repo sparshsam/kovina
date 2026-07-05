@@ -7,7 +7,7 @@
 >
 > **Every project starts here**, before any colors, typography, illustrations, or branding are chosen.
 >
-> Companion to the [Design Playbook](./DESIGN_PLAYBOOK.md) — this covers the structural canvas;
+> Companion to the [Design Playbook](../foundational/DESIGN_PLAYBOOK.md) — this covers the structural canvas;
 > the Design Playbook covers visual components, colors, and typography on that canvas.
 
 ---
@@ -1134,4 +1134,4 @@ Before declaring an architecture pass complete, verify every item below.
 
 ---
 
-*This playbook establishes the structural canvas. Apply the [Design Playbook](./DESIGN_PLAYBOOK.md) for visual components, colors, typography, and brand identity within this architecture.*
+*This playbook establishes the structural canvas. Apply the [Design Playbook](../foundational/DESIGN_PLAYBOOK.md) for visual components, colors, typography, and brand identity within this architecture.*
