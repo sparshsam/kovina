@@ -206,7 +206,7 @@ type Project = {
 ## Deployment
 
 - **Build:** `npm run build` → produces `out/` directory (static export)
-- **Deploy:** `npx wrangler pages deploy out --project-name kovina --branch main`
+- **Deploy:** `npx wrangler pages deploy out --project-name kovina --branch production`
 - **Cache purge:** `curl -X POST "https://api.cloudflare.com/client/v4/zones/9bb7363fbddb97ee545828c205b7dd9c/purge_cache" -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" -H "Content-Type: application/json" -d '{"purge_everything":true}'`
 - **Always purge cache after deploy** — CSS filenames change with each build, stale edge cache causes 404s.
 - **Cache policy:** `public/_headers` prevents edge caching of HTML pages; hashed assets (`_next/static/*`, `/fonts/*`) cached permanently.
@@ -221,7 +221,7 @@ npm run build        # Production build (static export to out/)
 npm run lint         # ESLint
 
 # Deploy + purge cache
-npx wrangler pages deploy out --project-name kovina --branch main
+npx wrangler pages deploy out --project-name kovina --branch production
 curl -X POST "https://api.cloudflare.com/client/v4/zones/.../purge_cache" \
   -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" \
   -H "Content-Type: application/json" \

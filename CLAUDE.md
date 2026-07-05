@@ -23,7 +23,7 @@
 - `next.config.ts` — Static export config
 
 **Build:** `npm run build` → `out/`
-**Deploy:** `npx wrangler pages deploy out --project-name kovina --branch main`
+**Deploy:** `npx wrangler pages deploy out --project-name kovina --branch production`
 **Cache purge (always after deploy):** `curl -X POST .../purge_cache -d '{"purge_everything":true}'`
 **Cache policy:** `public/_headers` prevents HTML caching at edge; hashed assets (`_next/static/*`, `/fonts/*`) cached permanently.
 

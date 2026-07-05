@@ -17,7 +17,9 @@ The build produces a `out/` directory containing the complete static export.
 ### Via wrangler
 
 ```bash
-npx wrangler pages deploy out --project-name kovina --branch main
+npx wrangler pages deploy out --project-name kovina --branch production
+
+> **Important:** Use `--branch production` (not `--branch main`). The `--branch main` flag creates a *preview* deployment that won't be served at the custom domain. Only the production branch serves at `kovina.org`.
 ```
 
 ### Authentication
