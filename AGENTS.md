@@ -1,5 +1,8 @@
 # Kovina — Agent Operating Notes
 
+> **Operational config, deploy commands, and common pitfalls → `CLAUDE.md`**
+> This file covers product identity and design. For build/deploy/cache/secret commands, read `CLAUDE.md` first.
+
 > **Brand:** Kovina
 > **Meaning:** Forged tools, durable software, personal infrastructure
 > **Tone:** Calm, editorial, confident

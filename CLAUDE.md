@@ -1,4 +1,46 @@
-@AGENTS.md
+⚠️ CRITICAL — Read these before every session.
+
+Key reference: `AGENTS.md` — brand identity, page structure, app detail pages, URL conventions, project list, design rules, CSS architecture, routes, data model.
+
+---
+
+## ⚠️ Critical Deployment Notes
+
+**The #1 recurring bug:** Every previous session would build correctly but deploy to a *preview* URL instead of production, leaving kovina.org broken. Follow these rules without exception:
+
+### Deploy
+```bash
+npm run build
+npx wrangler pages deploy out --project-name kovina --branch production   # ← MUST be --branch production
+```
+
+- `--branch main` creates a **preview** deployment at `{hash}.kovina.pages.dev` — never reaches production.
+- `--branch production` auto-promotes to production, served at `kovina.org` and `kovina.pages.dev`.
+- The Cloudflare Pages production branch is set to `production` (not `main`).
+- The `CLOUDFLARE_API_TOKEN` env var must be set (in `~/.zshrc`).
+
+### Always purge cache after deploy
+```bash
+curl -X POST "https://api.cloudflare.com/client/v4/zones/9bb7363fbddb97ee545828c205b7dd9c/purge_cache" \
+  -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{"purge_everything":true}'
+```
+
+Without a cache purge, Cloudflare's edge continues serving stale HTML from the previous deployment, causing all assets (SVG wordmarks, app images, CSS, JS, fonts) to 404 since their hash-based filenames changed.
+
+### Cache policy
+`public/_headers` prevents edge caching of HTML pages. Hashed assets (`_next/static/*`, `/fonts/*`) cache permanently. This file is included in every deployment — no manual action needed.
+
+### If things look broken after deploy
+Check which URL is being served:
+- `https://kovina.org/kovina-wordmark-header.svg` → should be 200
+- `https://kovina.org/app-icons/opensend.png` → should be 200
+- Browser console → should have 0 errors
+
+If assets 404 but `kovina.org` HTML loads, the previous deployment was a preview, not production. Redeploy with `--branch production`.
+
+---
 
 ## Quick Reference
 
@@ -19,13 +61,14 @@
 - `public/_redirects` — Cloudflare Pages www → root redirect
 - `public/_headers` — Cloudflare edge caching policy (prevent HTML caching)
 - `public/app-icons/` — App screenshot PNGs (14 with icons, 4 slugs use placeholders)
+- `public/favicon.ico` — Generated from kovina brand PNGs; regenerate if brand changes
+- `public/kovina-favicon.svg` — Brand SVG favicon (uses Inter font via @import — "K" on green rect)
 - `public/fonts/` — NotoSansSymbols2-Regular.ttf
 - `next.config.ts` — Static export config
 
 **Build:** `npm run build` → `out/`
 **Deploy:** `npx wrangler pages deploy out --project-name kovina --branch production`
 **Cache purge (always after deploy):** `curl -X POST .../purge_cache -d '{"purge_everything":true}'`
-**Cache policy:** `public/_headers` prevents HTML caching at edge; hashed assets (`_next/static/*`, `/fonts/*`) cached permanently.
 
 **Design constraints:**
 - No cards, no bordered containers, no gradients, no animations
@@ -39,8 +82,6 @@
 - `assets/` — Hero screenshots, gallery images, icons, branding
 - `CHANGELOG.md` — Release history
 
-**CI:** Repo at github.com/sparshsam/kovina. Main branch auto-deploys to Cloudflare Pages.
-
 **Brand assets:** `assets/branding/` — wordmark SVGs (black, white, header, favicon, social)
 
 **Ecosystem standards (shared across all Open* projects — read before every session):**
@@ -49,7 +90,7 @@
 - `standards/manifest.json` — Machine-readable version manifest
 - `standards/KOVINA_MANIFESTO.md` — Constitution: why Kovina exists, what belongs, principles
 - `standards/BRAND_GUIDELINES.md` — Brand identity system
-- `standards/DESIGN_PLAYBOOK.md` — UI/UX design system
+- `standards/DESIGN_PLAYBOOK.md` — UI/UI design system
 - `standards/PRODUCT_ARCHITECTURE_PLAYBOOK.md` — Architecture patterns
 - `standards/MCP-SERVER-BUILD-GUIDE.md` — MCP server specification
 - `standards/RELEASE_PROCESS.md` — Release lifecycle and checklist
