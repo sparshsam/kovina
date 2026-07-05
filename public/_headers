@@ -14,3 +14,11 @@
 # App icons change rarely — cache moderately
 /app-icons/*
   Cache-Control: public, max-age=86400
+
+# Favicons — never cached; always use ?v= param to force refresh
+/favicon.ico
+  Cache-Control: public, no-cache
+  CDN-Cache-Control: no-cache
+/kovina-favicon*
+  Cache-Control: public, no-cache
+  CDN-Cache-Control: no-cache

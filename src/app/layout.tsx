@@ -25,13 +25,16 @@ export const metadata: Metadata = {
     "A collection of open-source tools built for ownership, permanence, and everyday use. Forged by Sparsh Sam in Toronto.",
   icons: {
     icon: [
-      { url: "/favicon.ico", sizes: "any" },
-      { url: "/kovina-favicon.svg", type: "image/svg+xml" },
-      { url: "/kovina-favicon-32.png", sizes: "32x32", type: "image/png" },
-      { url: "/kovina-favicon-64.png", sizes: "64x64", type: "image/png" },
-      { url: "/kovina-favicon-128.png", sizes: "128x128", type: "image/png" },
-      { url: "/kovina-favicon-256.png", sizes: "256x256", type: "image/png" },
+      { url: "/favicon.ico?v=2", sizes: "any" },
+      { url: "/kovina-favicon.svg?v=2", type: "image/svg+xml" },
+      { url: "/kovina-favicon-32.png?v=2", sizes: "32x32", type: "image/png" },
+      { url: "/kovina-favicon-64.png?v=2", sizes: "64x64", type: "image/png" },
+      { url: "/kovina-favicon-128.png?v=2", sizes: "128x128", type: "image/png" },
+      { url: "/kovina-favicon-256.png?v=2", sizes: "256x256", type: "image/png" },
     ],
+  },
+  other: {
+    "msapplication-TileImage": "/kovina-favicon-256.png?v=2",
   },
   openGraph: {
     title: "Kovina",
