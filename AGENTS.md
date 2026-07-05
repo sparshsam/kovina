@@ -156,15 +156,16 @@ Apps with existing third-party URLs retain them (Hisstastic, WordWise, Chess by 
 | 2 | OpenSnap | Live (Store) | snap.kovina.org / Microsoft Store | opensnap |
 | 3 | OpenSend | Live | send.kovina.org | opensend |
 | 4 | OpenPalette | Live | palette.kovina.org | openpalette |
-| 5 | Hisstastic | Live | hisstastic.vercel.app | hisstastic |
+| 5 | OpenProof | **Live** | proof.kovina.org | openproof |
+| 6 | Hisstastic | Live | hisstastic.vercel.app | hisstastic |
 | 6 | WordWise | Live | wordwisehiccups.vercel.app | wordwise |
 | 7 | OpenLedger | Dev | ledger.kovina.org | openledger |
 | 8 | OpenTone | Dev | tone.kovina.org | opentone |
 | 9 | OpenSprout | Dev | sprout.kovina.org | opensprout |
 | 10 | OpenJournal | Dev | journal.kovina.org | openjournal |
-| 11 | OpenProof | Dev | proof.kovina.org | openproof |
-| 12 | OpenConvert | Dev | convert.kovina.org | openconvert |
-| 13 | OpenScrabble | Dev | scrabble.kovina.org | openscrabble |
+| 11 | OpenConvert | Dev | convert.kovina.org | openconvert |
+| 12 | OpenScrabble | Dev | scrabble.kovina.org | openscrabble |
+| 13 | Chess by Sparsh | Dev | chess-by-sparsh.vercel.app | chess-by-sparsh |
 | 14 | Chess by Sparsh | Dev | chess-by-sparsh.vercel.app | chess-by-sparsh |
 | 15 | World Clock Widget | Dev | — | world-clock-widget |
 | 16 | SheSafe | Dev | isshesafe.vercel.app | shesafe |
@@ -256,6 +257,17 @@ curl -X POST "https://api.cloudflare.com/client/v4/zones/.../purge_cache" \
   -H "Content-Type: application/json" \
   -d '{"purge_everything":true}'
 ```
+
+## Session History
+
+### 2026-07-05
+- OpenProof moved to Live section (below OpenPalette), marked `underDev: false`
+- Removed stale 26KB favicon.ico from `src/app/` (Next.js auto-detects it)
+- Added `?v=2` cache-buster on all favicon URLs in layout.tsx
+- Added `no-cache` headers for favicons in `_headers`
+- Added GitHub Actions auto-deploy workflow (`.github/workflows/deploy.yml`)
+- `CLOUDFLARE_API_TOKEN` set as repo secret
+- Fixed v1.0.0 stable release of OpenProof
 
 ## Changelog Summary (2026-07-01)
 

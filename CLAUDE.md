@@ -9,6 +9,10 @@ Key reference: `AGENTS.md` — brand identity, page structure, app detail pages,
 **The #1 recurring bug:** Every previous session would build correctly but deploy to a *preview* URL instead of production, leaving kovina.org broken. Follow these rules without exception:
 
 ### Deploy
+
+**Auto-deploy (recommended):** Push to `main` — `.github/workflows/deploy.yml` builds and deploys to production, then purges cache. `CLOUDFLARE_API_TOKEN` set as repo secret.
+
+**Manual deploy (if needed):**
 ```bash
 npm run build
 npx wrangler pages deploy out --project-name kovina --branch production   # ← MUST be --branch production
@@ -36,6 +40,7 @@ Without a cache purge, Cloudflare's edge continues serving stale HTML from the p
 Check which URL is being served:
 - `https://kovina.org/kovina-wordmark-header.svg` → should be 200
 - `https://kovina.org/app-icons/opensend.png` → should be 200
+- `https://kovina.org/favicon.ico` → should return **1893 bytes** (Kovina favicon), not 25931 (stale Vercel)
 - Browser console → should have 0 errors
 
 If assets 404 but `kovina.org` HTML loads, the previous deployment was a preview, not production. Redeploy with `--branch production`.
@@ -117,3 +122,10 @@ If assets 404 but `kovina.org` HTML loads, the previous deployment was a preview
 
 **Templates** — canonical scaffolding artifacts (consumed by OpenForge):
 - `standards/templates/` — README, CHANGELOG, CONTRIBUTING, SECURITY, ISSUE_TEMPLATE, PULL_REQUEST_TEMPLATE, release-notes, LICENSE_HEADER
+
+## Session History
+
+### 2026-07-05
+- OpenProof promoted to Live (moved below OpenPalette, now `underDev: false`)
+- Favicon: removed 26KB `src/app/favicon.ico`, added `?v=2` cache-busters + `no-cache` headers
+- Auto-deploy: `.github/workflows/deploy.yml` added, `CLOUDFLARE_API_TOKEN` set as repo secret
