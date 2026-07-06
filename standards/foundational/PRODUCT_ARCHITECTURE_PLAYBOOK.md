@@ -9,6 +9,8 @@
 >
 > Companion to the [Design Playbook](../foundational/DESIGN_PLAYBOOK.md) — this covers the structural canvas;
 > the Design Playbook covers visual components, colors, and typography on that canvas.
+>
+> **Note on scope:** This playbook covers the *spatial layout and structural placement* of navigation and performance as architectural concerns. Behavioral navigation rules (hierarchy, deep links, platform patterns) are owned by [NAVIGATION_STANDARD.md](../shared/NAVIGATION_STANDARD.md). Performance budgets and measurement are owned by [PERFORMANCE_STANDARD.md](../shared/PERFORMANCE_STANDARD.md).
 
 ---
 

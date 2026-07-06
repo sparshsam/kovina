@@ -1,10 +1,21 @@
 # Standards Version
 
-## v1.2.0 — 2026-07-05
+## v1.2.0 — 2026-07-06
 
-**Last updated:** 2026-07-05
+**Last updated:** 2026-07-06
 
 **Compatible with:** All Kovina projects
+
+**Changes since v1.1.0:**
+- Added shared/NAVIGATION_STANDARD — cross-platform navigation architecture (hierarchy, platform principles, deep links, command palette, PWA adaptation).
+- Added shared/DATA_STORAGE_STANDARD — data architecture, local-first philosophy, export/import, sync, schema versioning, storage limits, auditability.
+- Added shared/SECURITY_PRIVACY_STANDARD — privacy guarantees, permissions, secrets management, encryption, authentication, threat model, safe defaults.
+- Added shared/PERFORMANCE_STANDARD — startup budgets, interaction latency, bundle size, Web Vitals, platform performance expectations, profiling requirements.
+- Added protocols/OPENFORGE_STANDARD — project scaffolding engine specification (standards manifest loading, template consumption, project profile mapping, generation audit, reproducibility).
+- Added protocols/OPENAUDIT_STANDARD — compliance verification engine specification (audit categories, scoring model, pass/warn/fail severity, CI integration, remediation suggestions, manual QA handoff).
+- Updated README.md with the complete app-organism anatomy model and expanded Authority Map for all 6 new standards.
+- Updated manifest.json with all 6 new standards entries.
+- Updated CHANGELOG.md with v1.2.0 changes.
 
 **Changes since v1.0.0:**
 - Added WEBSITE_STANDARD — web-first and showcase website requirements.
@@ -49,7 +60,13 @@
 | shared/ACCESSIBILITY_STANDARD | 1.0.0 |
 | shared/STORE_LISTING_STANDARD | 1.0.0 |
 | shared/LOCALIZATION_STANDARD | 1.0.0 |
+| shared/NAVIGATION_STANDARD | 1.0.0 |
+| shared/DATA_STORAGE_STANDARD | 1.0.0 |
+| shared/SECURITY_PRIVACY_STANDARD | 1.0.0 |
+| shared/PERFORMANCE_STANDARD | 1.0.0 |
 | PROJECT_STRUCTURE_STANDARD | 1.0.0 |
+| protocols/OPENFORGE_STANDARD | 1.0.0 |
+| protocols/OPENAUDIT_STANDARD | 1.0.0 |
 
 ---
 
@@ -87,7 +104,13 @@ Standards evolve slowly. Apps evolve frequently. The standards directory should 
     "accessibility": "1.0.0",
     "storeListing": "1.0.0",
     "localization": "1.0.0",
-    "projectStructure": "1.0.0"
+    "navigation": "1.0.0",
+    "dataStorage": "1.0.0",
+    "securityPrivacy": "1.0.0",
+    "performance": "1.0.0",
+    "projectStructure": "1.0.0",
+    "openForge": "1.0.0",
+    "openAudit": "1.0.0"
   }
 }
 ```

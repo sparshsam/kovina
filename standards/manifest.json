@@ -1,7 +1,7 @@
 {
   "manifest": "1.2.0",
   "version": "1.2.0",
-  "released": "2026-07-05",
+  "released": "2026-07-06",
   "standards": {
     "manifesto": "1.0.0",
     "brand": "1.0.0",
@@ -21,6 +21,12 @@
     "accessibility": "1.0.0",
     "storeListing": "1.0.0",
     "localization": "1.0.0",
-    "projectStructure": "1.0.0"
+    "navigation": "1.0.0",
+    "dataStorage": "1.0.0",
+    "securityPrivacy": "1.0.0",
+    "performance": "1.0.0",
+    "projectStructure": "1.0.0",
+    "openForge": "1.0.0",
+    "openAudit": "1.0.0"
   }
 }
