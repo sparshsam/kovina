@@ -48,6 +48,7 @@ export const projects: Project[] = [
   { slug: "shesafe",           name: "SheSafe",           desc: "Community safety mapping.",                       website: "https://isshesafe.vercel.app",             repo: "shesafe",             underDev: true,  isDesktop: false },
   { slug: "elora-vault",       name: "Elora Vault",       desc: "Onchain capital infrastructure.",                  website: "https://vault.kovina.org",                 repo: "elora-vault",         underDev: true,  isDesktop: false },
   { slug: "sparsh-sam",        name: "Sparsh Sam",        desc: "Personal site and portfolio.",                    website: "https://sparshsam.github.io",              repo: "sparshsam.github.io", underDev: false, isDesktop: false },
+  { slug: "openresume",        name: "OpenResume",        desc: "Resume and cover letter builder.",                 website: "https://resume.kovina.org",                repo: "openresume",          underDev: true,  isDesktop: false },
 ];
 
 export function projectBySlug(slug: string): Project | undefined {
