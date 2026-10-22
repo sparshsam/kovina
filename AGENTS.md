@@ -94,7 +94,7 @@ kovina/
 │       ├── projects.ts           # Canonical project list with slugs, store/website URLs
 │       └── project-content.ts    # App feature content for detail pages
 ├── public/
-│   ├── app-icons/       # App screenshot PNGs (14 with icons, 4 use placeholders)
+│   ├── app-icons/       # App icon PNGs, 1024×1024 (15 with icons, 4 use placeholders)
 │   ├── fonts/           # NotoSansSymbols2-Regular.ttf
 │   ├── _headers         # Cloudflare edge caching policy (no-cache on HTML)
 │   └── _redirects       # www → root redirect
@@ -109,7 +109,7 @@ kovina/
 1. **Shared Header** — `src/components/Header.tsx`. KOVINA on far left. Right actions: (optional) All Projects → GitHub → ThemeToggle (absolute right-0 on full-width sticky header).
 2. **Hero** — Centered. Large KOVINA wordmark (`text-[clamp(4rem,15vw,10rem)] font-black leading-[0.85]`), headline, tagline, two pill CTAs. Directly on canvas, no card.
 3. **Editorial Statement** — Centered. "Most software is rented..." paragraph.
-4. **Projects — App Icons Exhibition** — 18 full-screen project sections with large app screenshots, 3-cycle alignment (left/center/right), clickable titles linking to `/apps/[slug]`, status badges, GitHub links.
+4. **Projects — App Icons Exhibition** — 19 full-screen project sections with large app icon bands, 3-cycle alignment (left/center/right), clickable titles linking to `/apps/[slug]`, status badges, GitHub links.
 5. **Data Strip** — Border-to-border: Open Source · Built by Sparsh Sam · Toronto, Canada
 6. **Shared Footer** — `src/components/Footer.tsx`. Brand tagline + GitHub / Privacy / Terms links.
 
@@ -142,35 +142,40 @@ Apps following the `{shortname}.kovina.org` pattern (drop "Open" prefix):
 | OpenSprout | sprout.kovina.org |
 | OpenJournal | journal.kovina.org |
 | OpenProof | proof.kovina.org |
+| OpenResume | resume.kovina.org |
 | OpenConvert | convert.kovina.org |
 | OpenScrabble | scrabble.kovina.org |
 | Elora Vault | vault.kovina.org |
 
 Apps with existing third-party URLs retain them (Hisstastic, WordWise, Chess by Sparsh, SheSafe, Sparsh Sam).
 
-## Projects (18 listed)
+## Projects (19 listed — this order is the homepage order)
 
 | # | Project | Status | Store/Website | Repo |
 |---|---------|--------|---------------|------|
 | 1 | OpenReader | Live (Store) | reader.kovina.org / Microsoft Store | openreader |
-| 2 | OpenSnap | Live (Store) | snap.kovina.org / Microsoft Store | opensnap |
-| 3 | OpenSend | Live | send.kovina.org | opensend |
-| 4 | OpenPalette | Live | palette.kovina.org | openpalette |
-| 5 | OpenProof | **Live** | proof.kovina.org | openproof |
-| 6 | Hisstastic | Live | hisstastic.vercel.app | hisstastic |
-| 6 | WordWise | Live | wordwisehiccups.vercel.app | wordwise |
-| 7 | OpenLedger | Dev | ledger.kovina.org | openledger |
-| 8 | OpenTone | Dev | tone.kovina.org | opentone |
-| 9 | OpenSprout | Dev | sprout.kovina.org | opensprout |
-| 10 | OpenJournal | Dev | journal.kovina.org | openjournal |
-| 11 | OpenConvert | Dev | convert.kovina.org | openconvert |
-| 12 | OpenScrabble | Dev | scrabble.kovina.org | openscrabble |
-| 13 | Chess by Sparsh | Dev | chess-by-sparsh.vercel.app | chess-by-sparsh |
-| 14 | Chess by Sparsh | Dev | chess-by-sparsh.vercel.app | chess-by-sparsh |
-| 15 | World Clock Widget | Dev | — | world-clock-widget |
-| 16 | SheSafe | Dev | isshesafe.vercel.app | shesafe |
-| 17 | Elora Vault | Dev | vault.kovina.org | elora-vault |
-| 18 | Sparsh Sam | Live | sparshsam.github.io | sparshsam.github.io |
+| 2 | OpenResume | Live | resume.kovina.org | openresume |
+| 3 | OpenSnap | Live (Store) | snap.kovina.org / Microsoft Store | opensnap |
+| 4 | OpenSend | Live | send.kovina.org | opensend |
+| 5 | OpenPalette | Live | palette.kovina.org | openpalette |
+| 6 | OpenProof | Live | proof.kovina.org | openproof |
+| 7 | Hisstastic | Live | hisstastic.vercel.app | hisstastic |
+| 8 | WordWise | Live | wordwisehiccups.vercel.app | wordwise |
+| 9 | OpenLedger | Dev | ledger.kovina.org | openledger |
+| 10 | OpenTone | Dev | tone.kovina.org | opentone |
+| 11 | OpenSprout | Dev | sprout.kovina.org | opensprout |
+| 12 | OpenJournal | Dev | journal.kovina.org | openjournal |
+| 13 | OpenConvert | Dev | convert.kovina.org | openconvert |
+| 14 | OpenScrabble | Dev | scrabble.kovina.org | openscrabble |
+| 15 | Chess by Sparsh | Dev | chess-by-sparsh.vercel.app | chess-by-sparsh |
+| 16 | World Clock Widget | Dev | — | world-clock-widget |
+| 17 | SheSafe | Dev | isshesafe.vercel.app | shesafe |
+| 18 | Elora Vault | Dev | vault.kovina.org | elora-vault |
+| 19 | Sparsh Sam | Live | sparshsam.github.io | sparshsam.github.io |
+
+Status mirrors `underDev` in `projects.ts` and is editorial copy, not deployment
+status: OpenLedger and OpenSprout are deployed yet still Dev, while OpenResume
+ships v0.1.11 in production and is Live. Never infer uptime from the badge.
 
 ## Design Rules
 
@@ -182,6 +187,7 @@ Apps with existing third-party URLs retain them (Hisstastic, WordWise, Chess by 
 - Exactly one accent color (`#099019`)
 - Borders barely visible (`rgba(255,255,255,0.06)` / `rgba(0,0,0,0.06)`)
 - Mobile-first responsive (sm:/lg: breakpoints, touch targets ≥44px)
+- Homepage icon band: each 1024×1024 icon renders `object-cover` in a full-width ~60vh box, so the page shows a cropped horizontal band of the artwork, not the icon. The field colour is what reads — a brand-colour or off-white field becomes a deliberate colour band, a `#000000` field vanishes into the black page. Choose masters accordingly (OpenResume uses its forest-green field).
 
 ## CSS Architecture (Tailwind v4)
 
@@ -195,7 +201,7 @@ Apps with existing third-party URLs retain them (Hisstastic, WordWise, Chess by 
 | Route | Description |
 |---|---|
 | `/` | Home (landing page) |
-| `/apps/[slug]` | Individual app detail page (18 pre-rendered) |
+| `/apps/[slug]` | Individual app detail page (19 pre-rendered) |
 | `/privacy` | Privacy policy |
 | `/terms` | Terms of use |
 | `/_not-found` | Custom 404 |
@@ -214,7 +220,7 @@ All routes are statically prerendered via `output: "export"` and `generateStatic
 | `src/components/Footer.tsx` | Universal footer (data strip + links) |
 | `src/components/ThemeToggle.tsx` | Dark/light toggle (localStorage-backed) |
 | `src/lib/projects.ts` | Canonical project list with `storeUrl` and `website` fields |
-| `src/lib/project-content.ts` | App feature content for all 18 detail pages |
+| `src/lib/project-content.ts` | App feature content for all 19 detail pages |
 | `next.config.ts` | Static export config (`output: "export"`) |
 | `public/_redirects` | Cloudflare Pages www → root redirect |
 
@@ -259,6 +265,18 @@ curl -X POST "https://api.cloudflare.com/client/v4/zones/.../purge_cache" \
 ```
 
 ## Session History
+
+### 2026-10-21
+- OpenResume added as the 19th app, placed second on the homepage, marked Live
+  (`underDev: false`); `/apps/openresume` has a five-feature content block.
+- Icon: `public/app-icons/openresume.png` from the OneDrive Kovina master
+  (forest-green `#1a2818` field, cream resume mark), not the app repo's
+  light-field variant.
+- Counts corrected throughout this file: 19 projects, 19 detail pages, 15 icons
+  plus 4 placeholders. The project table's duplicated Chess row and broken
+  numbering were fixed.
+- Open items handed to the next session live in `CLAUDE.md` → "Current state":
+  32 open Dependabot alerts (6 critical) and 7 pre-existing dead outbound links.
 
 ### 2026-07-05
 - OpenProof moved to Live section (below OpenPalette), marked `underDev: false`
