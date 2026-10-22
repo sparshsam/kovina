@@ -29,6 +29,7 @@ export function statusLabel(s: ProjectStatus): string {
 export const projects: Project[] = [
   // ── Live ──
   { slug: "openreader",        name: "OpenReader",        desc: "Native PDF reader for Windows.",                  storeUrl: "https://apps.microsoft.com/detail/9MXDVW2645LL", website: "https://reader.kovina.org", repo: "openreader", underDev: false, isDesktop: true  },
+  { slug: "openresume",        name: "OpenResume",        desc: "Resume and cover letter builder.",                 website: "https://resume.kovina.org",                repo: "openresume",          underDev: true,  isDesktop: false },
   { slug: "opensnap",          name: "OpenSnap",          desc: "Screenshot and OCR widget for Windows.",           storeUrl: "https://apps.microsoft.com/detail/9NV4G1F09L41", website: "https://snap.kovina.org", repo: "opensnap", underDev: false, isDesktop: true  },
   { slug: "opensend",          name: "OpenSend",          desc: "Free, open-source file sharing.",                 website: "https://send.kovina.org",                 repo: "opensend",            underDev: false, isDesktop: false },
   { slug: "openpalette",       name: "OpenPalette",       desc: "Color and palette utility.",                      website: "https://palette.kovina.org",               repo: "openpalette",         underDev: false, isDesktop: false },
@@ -48,7 +49,6 @@ export const projects: Project[] = [
   { slug: "shesafe",           name: "SheSafe",           desc: "Community safety mapping.",                       website: "https://isshesafe.vercel.app",             repo: "shesafe",             underDev: true,  isDesktop: false },
   { slug: "elora-vault",       name: "Elora Vault",       desc: "Onchain capital infrastructure.",                  website: "https://vault.kovina.org",                 repo: "elora-vault",         underDev: true,  isDesktop: false },
   { slug: "sparsh-sam",        name: "Sparsh Sam",        desc: "Personal site and portfolio.",                    website: "https://sparshsam.github.io",              repo: "sparshsam.github.io", underDev: false, isDesktop: false },
-  { slug: "openresume",        name: "OpenResume",        desc: "Resume and cover letter builder.",                 website: "https://resume.kovina.org",                repo: "openresume",          underDev: true,  isDesktop: false },
 ];
 
 export function projectBySlug(slug: string): Project | undefined {
